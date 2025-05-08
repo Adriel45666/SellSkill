@@ -1,0 +1,127 @@
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SELLSKILLS - Marketplace de Cursos</title>
+  <link rel="stylesheet" href="body.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="/imagens/ChatGPT Image 30 de abr. de 2025, 20_04_01.png" alt="Logo SELLKILLS">
+      <h1>SELLSKILLS</h1>
+    </div>
+    <nav>
+      <input type="text" placeholder="Buscar cursos..." class="barra-pesquisa"/>
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="cursos.html">Cursos</a></li>
+        <li><a href="login.html">Entrar</a></li>
+        <li><a href="cadastro.html">Cadastrar</a></li>
+        <li><a href="carrinho.html">Carrinho</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <script>
+    function abrirCurso(pagina){
+      var caminho = "file:///C:/Users/SKA/Desktop/sellskils/.vscode/"
+      var enumerador = {
+        1: 'programa',
+        2: 'Desenvolvimento',
+        3: 'python',
+        4: 'Inteligência Artificial',
+        5: 'Android',
+        6: 'Python',
+        7: 'Python',
+        8: 'Python',
+        9: 'Python',
+        10: 'Python',
+        11: 'Python',
+
+      }
+
+      window.location.href =   caminho + enumerador[teste] + '.html';
+    
+    }
+
+  </script>
+
+
+  <main>
+    <section class="destaques">
+      <h2>Destaques da Semana</h2>
+
+      <div class="curso-card" onclick="abrirCurso(1)">
+        <h3>Curso de Programação</h3>
+        <p>Aprenda do zero até o avançado</p>
+        <span class="preco">R$ 99,90</span>
+      </div>
+    
+      <div class="curso-card" onclick="abrirCurso(2)">
+        <h3>Desenvolvimento Web Full Stack</h3>
+        <p>HTML, CSS, JavaScript, Node.js e mais</p>
+        <span class="preco">R$ 149,90</span>
+      </div>
+    
+      <div class="curso-card" onclick="abrirCurso(3)">
+        <h3>Python para Iniciantes</h3>
+        <p>Aprenda lógica e automação com Python</p>
+        <span class="preco">R$ 89,90</span>
+      </div>
+    
+      <div class="curso-card" onclick="abrirCurso(4)">
+        <h3>Inteligência Artificial com Python</h3>
+        <p>Crie modelos de IA com aprendizado de máquina</p>
+        <span class="preco">R$ 199,90</span>
+      </div>
+    
+      <div class="curso-card" onclick="abrirCurso(5)">
+        <h3>Desenvolvimento de Aplicativos Android</h3>
+        <p>Crie apps com Kotlin e Android Studio</p>
+        <span class="preco">R$ 129,90</span>
+      </div>
+    
+      <div class="curso-card" onclick="abrirCurso(6)">
+        <h3>Segurança da Informação</h3>
+        <p>Fundamentos de segurança e ética hacker</p>
+        <span class="preco">R$ 119,90</span>
+      </div>
+    
+      <div class="curso-card" onclick="abrirCurso(7)">
+        <h3>Redes de Computadores</h3>
+        <p>Aprenda sobre TCP/IP, roteamento e segurança</p>
+        <span class="preco">R$ 109,90</span>
+      </div>
+    
+      <div class="curso-card" onclick="abrirCurso(8)">
+        <h3>Banco de Dados com MySQL</h3>
+        <p>Aprenda SQL e a modelagem de dados</p>
+        <span class="preco">R$ 89,90</span>
+      </div>
+    
+      <div class="curso-card" onclick="abrirCurso(9)">
+        <h3>Desenvolvimento de Games com Unity</h3>
+        <p>Crie jogos 2D e 3D com C#</p>
+        <span class="preco">R$ 159,90</span>
+      </div>
+    
+      <div class="curso-card" onclick="abrirCurso(10)">
+        <h3>DevOps e Integração Contínua</h3>
+        <p>Docker, Jenkins e automação de deploy</p>
+        <span class="preco">R$ 179,90</span>
+      </div>
+    
+      <div class="curso-card" onclick="abrirCurso(11)">
+        <h3>Computação em Nuvem com AWS</h3>
+        <p>Infraestrutura, EC2, S3 e Lambda</p>
+        <span class="preco">R$ 189,90</span>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 SELLKILLS. Todos os direitos reservados.</p>
+  </footer>
+</body>
+</html>
