@@ -3,45 +3,56 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>SELLSKILLS - Marketplace de Cursos</title>
-  <link rel="stylesheet" href="body.css" />
+  <link rel="stylesheet" href="index.css" />
 </head>
 <body>
   <header>
     <div class="logo">
-      <img src="/imagens/ChatGPT Image 30 de abr. de 2025, 20_04_01.png" alt="Logo SELLKILLS">
-      <h1>SELLSKILLS</h1>
+      <img src="ChatGPT Image 30 de abr. de 2025, 20_04_01.png" alt="Logo SELLKILLS">
+      <h1><a >SELLKILLS</a></h1>
     </div>
     <nav>
       <input type="text" placeholder="Buscar cursos..." class="barra-pesquisa"/>
       <ul>
-        <li><a href="index.html">Início</a></li>
-        <li><a href="cursos.html">Cursos</a></li>
-        <li><a href="login.html">Entrar</a></li>
-        <li><a href="cadastro.html">Cadastrar</a></li>
-        <li><a href="carrinho.html">Carrinho</a></li>
+        <li><a onclick="abririnicio(1)">Início</a></li>
+        <li><a onclick="abririnicio(2)">Entrar</a></li>
+        <li><a onclick="abririnicio(3)">Cadastrar</a></li>
+        <li><a onclick="abririnicio(4)">Carrinho</a></li>
       </ul>
     </nav>
   </header>
 
   <script>
     function abrirCurso(pagina){
-      var caminho = "file:///C:/Users/SKA/Desktop/sellskils/.vscode/"
+      var caminho = "file:///C:/Users/SKA/Desktop/sellskils/inicio/cursos/"
       var enumerador = {
-        1: 'programa',
+        1: 'progama',
         2: 'Desenvolvimento',
         3: 'python',
-        4: 'Inteligência Artificial',
-        5: 'Android',
-        6: 'Python',
-        7: 'Python',
-        8: 'Python',
-        9: 'Python',
-        10: 'Python',
-        11: 'Python',
-
+        4: 'IA',
+        5: 'DAA',
+        6: 'SI',
+        7: 'RC',
+        8: 'BDSQL',
+        9: 'DGU',
+        10: 'DevOps',
+        11: 'CNAWS',
       }
 
-      window.location.href =   caminho + enumerador[teste] + '.html';
+      window.location.href =   caminho + enumerador[pagina] + '.html';
+
+      }
+      function abririnicio(inicio1){
+      var caminho = "file:///C:/Users/SKA/Desktop/sellskils/inicio/"
+      var enumerador2 = {
+        1:'index',
+        2:'login',
+        3:'cadastro',
+        4:'carrinho'
+      
+      }
+
+      window.location.href =   caminho + enumerador2[inicio1] + '.html';
     
     }
 
