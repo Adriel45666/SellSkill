@@ -1,0 +1,108 @@
+/* Reset e base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
+}
+
+/* Corpo */
+body {
+  background-color: #0f0f0f;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Container principal */
+.container {
+  text-align: center;
+}
+
+/* Logo principal */
+.logo {
+  font-size: 2.5rem;
+  color: #4ec868;
+  margin-bottom: 25px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px #4ec868;
+}
+
+/* Formulário */
+.form-box {
+  background-color: #121212;
+  padding: 30px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 0 15px #4ec868;
+}
+
+/* Título do formulário */
+.form-box h2 {
+  margin-bottom: 20px;
+  color: #4ec868;
+  font-size: 1.5rem;
+}
+
+/* Inputs */
+form input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 6px;
+  background-color: #2a2a2a;
+  color: #ffffff;
+  font-size: 0.95rem;
+}
+
+form input::placeholder {
+  color: #bbbbbb;
+}
+
+/* Botão */
+form button {
+  width: 100%;
+  padding: 12px;
+  background-color: #4ec868;
+  color: #000;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+form button:hover {
+  background-color: #0a835b;
+}
+
+/* Link de login */
+.login-link {
+  margin-top: 15px;
+  font-size: 0.9rem;
+}
+
+.login-link a {
+  color: #4ec868;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .form-box {
+    width: 90%;
+    padding: 40px;
+  }
+}
