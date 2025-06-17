@@ -4,12 +4,15 @@
  */
 package com.ska.SellSkill.controllers;
 
-import com.ska.SellSkill.dto.UsuarioDTO;
-import com.ska.SellSkill.service.UsuarioService;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.ska.SellSkill.dto.UsuarioDTO;
+import com.ska.SellSkill.service.UsuarioService;
 
 @RestController
 @RequestMapping("/UsuarioController")
