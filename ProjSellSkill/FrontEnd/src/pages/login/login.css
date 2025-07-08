@@ -1,67 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
+}
+
 body {
-  font-family: Arial;
-  font-size: 20px;
-  background: black;
-  font-weight: bold;
+  background-color: #0f0f0f;
+  color: #ffffff;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  margin: 0px;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .login-container {
-  background-color: white;
-  padding: 40px;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  width: 300px;
+  background-color: #1a1a1a;
+  padding: 30px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 0 15px #4ec868;
+  text-align: center;
 }
 
 .logo-header {
-  display: flex;
-  flex-direction: column; 
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  margin-bottom: 50px;
- }
-
-.logo-header .logo {
-  height: 150px; 
+  margin-bottom: 20px;
 }
 
-
+.logo-header .logo {
+  font-size: 2.5rem;
+  color: #4ec868;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
 
 .login-container input[type="text"],
 .login-container input[type="password"] {
   width: 100%;
   padding: 12px;
   margin: 10px 0;
-  border: 1px solid #4ec868;
-  border-radius: 10px;
-  box-sizing: border-box;
+  border: none;
+  border-radius: 6px;
+  background-color: #2a2a2a;
+  color: white;
+}
+
+.login-container input::placeholder {
+  color: #bbbbbb;
 }
 
 .login-container input[type="submit"] {
   width: 100%;
-  padding: 13px;
+  padding: 12px;
   background-color: #4ec868;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+  color: #000;
   font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 .login-container input[type="submit"]:hover {
-  background-color: #4ec868;
+  background-color: #0a835b;
 }
 
 .login-container p {
   text-align: center;
-  margin-top: 20px;
-  font-size: 14px;
+  margin-top: 15px;
+  font-size: 0.9rem;
 }
 
 .login-container a {
@@ -73,15 +83,13 @@ body {
   text-decoration: underline;
 }
 
-
-@media (max-width: 768px) {
+@media(max-width: 768px) {
   .login-container {
     width: 90%;
-    padding: 50px;
+    padding: 30px;
   }
 
   .logo-header {
-    flex-direction: column;
-    gap: 30px;
+    margin-bottom: 20px;
   }
 }
