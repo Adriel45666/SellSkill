@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>SELLSKILLS - Cursos</title>
-  <link rel="stylesheet" href="cursos.css" />
+  <link rel="stylesheet" href="main.css" />
 </head>
 <body>
   <header class="topo">
@@ -33,25 +33,6 @@
     <p>&copy; 2025 SELLSKILLS - Todos os direitos reservados.</p>
   </footer>
 
-  <script>
-    const listaCursos = document.querySelectorAll('.curso-card');
-    listaCursos.forEach(card => {
-      card.addEventListener('click', () => {
-        const id = card.getAttribute('data-id');
-        // Abre na mesma aba
-        window.location.href = `curso.html?id=${id}`;
-      });
-    });
-
-    // Filtro de busca
-    document.getElementById('pesquisa').addEventListener('input', function () {
-      const termo = this.value.toLowerCase();
-      listaCursos.forEach(card => {
-        const titulo = card.querySelector('h3').textContent.toLowerCase();
-        const descricao = card.querySelector('p').textContent.toLowerCase();
-        card.style.display = (titulo.includes(termo) || descricao.includes(termo)) ? 'block' : 'none';
-      });
-    });
-  </script>
+  <script src="index.js"></script>
 </body>
 </html>
