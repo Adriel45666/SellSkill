@@ -3,53 +3,142 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>SELLSKILLS - Cursos</title>
+  <title>SELLSKILLS - Marketplace de Cursos</title>
   <link rel="stylesheet" href="main.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
-  <header class="topo">
-    <div class="logo">SELLSKILLS</div>
-    <input id="pesquisa" type="text" placeholder="Buscar cursos..." class="barra-pesquisa">
+  <header>
+    <div class="header-conteudo">
+      <div class="logo">
+        <img src="resource/SellSkill.png" alt="Logo SELLSKILLS" />
+        
+      </div>
+
+      <div class="campo-pesquisa">
+        <input type="text" id="pesquisa" placeholder="Buscar cursos..." />
+      </div>
+
+      <div class="botao-carrinho-header" onclick="window.location.href='/Users/SKA/Desktop/SellSkill/src/pages/carrinho/carrinho.html'">
+        <i class="fas fa-shopping-cart"></i>
+      </div>
+    </div>
   </header>
 
-  <main class="container">
-    <section class="lista-cursos">
-      <div class="curso-card" data-id="1">
-        <h3>Segurança da Informação</h3>
-        <p>Proteja dados, redes e sistemas contra ameaças cibernéticas</p>
+  <main>
+    <section class="destaques">
+      <h2>Destaques da Semana</h2>
+
+       <div class="curso-card" onclick="abrirCurso(1)">
+        <h3>Curso de Programação</h3>
+        <p>Aprenda do zero até o avançado</p>
+        <span class="preco">R$ 99,90</span>
       </div>
-      <div class="curso-card" data-id="2">
+    
+      <div class="curso-card" onclick="abrirCurso(2)">
         <h3>Desenvolvimento Web Full Stack</h3>
         <p>HTML, CSS, JavaScript, Node.js e mais</p>
+        <span class="preco">R$ 149,90</span>
       </div>
-      <div class="curso-card" data-id="3">
+    
+      <div class="curso-card" onclick="abrirCurso(3)">
+        <h3>Python para Iniciantes</h3>
+        <p>Aprenda lógica e automação com Python</p>
+        <span class="preco">R$ 89,90</span>
+      </div>
+    
+      <div class="curso-card" onclick="abrirCurso(4)">
         <h3>Inteligência Artificial com Python</h3>
         <p>Crie modelos de IA com aprendizado de máquina</p>
+        <span class="preco">R$ 199,90</span>
       </div>
+    
+      <div class="curso-card" onclick="abrirCurso(5)">
+        <h3>Desenvolvimento de Aplicativos Android</h3>
+        <p>Crie apps com Kotlin e Android Studio</p>
+        <span class="preco">R$ 129,90</span>
+      </div>
+    
+      <div class="curso-card" onclick="abrirCurso(6)">
+        <h3>Segurança da Informação</h3>
+        <p>Fundamentos de segurança e ética hacker</p>
+        <span class="preco">R$ 119,90</span>
+      </div>
+    
+      <div class="curso-card" onclick="abrirCurso(7)">
+        <h3>Redes de Computadores</h3>
+        <p>Aprenda sobre TCP/IP, roteamento e segurança</p>
+        <span class="preco">R$ 109,90</span>
+      </div>
+    
+      <div class="curso-card" onclick="abrirCurso(8)">
+        <h3>Banco de Dados com MySQL</h3>
+        <p>Aprenda SQL e a modelagem de dados</p>
+        <span class="preco">R$ 89,90</span>
+      </div>
+    
+      <div class="curso-card" onclick="abrirCurso(9)">
+        <h3>Desenvolvimento de Games com Unity</h3>
+        <p>Crie jogos 2D e 3D com C#</p>
+        <span class="preco">R$ 159,90</span>
+      </div>
+    
+      <div class="curso-card" onclick="abrirCurso(10)">
+        <h3>DevOps e Integração Contínua</h3>
+        <p>Docker, Jenkins e automação de deploy</p>
+        <span class="preco">R$ 179,90</span>
+      </div>
+    
+      <div class="curso-card" onclick="abrirCurso(11)">
+        <h3>Computação em Nuvem com AWS</h3>
+        <p>Infraestrutura, EC2, S3 e Lambda</p>
+        <span class="preco">R$ 189,90</span>
+      </div>
+    </section>
     </section>
   </main>
 
-  <footer class="rodape">
-    <p>&copy; 2025 SELLSKILLS - Todos os direitos reservados.</p>
+  <footer>
+    <p>&copy; 2025 SELLSKILLS. Todos os direitos reservados.</p>
   </footer>
 
   <script>
-    const listaCursos = document.querySelectorAll('.curso-card');
-    listaCursos.forEach(card => {
-      card.addEventListener('click', () => {
-        const id = card.getAttribute('data-id');
-        // Abre na mesma aba
-        window.location.href = `curso.html?id=${id}`;
-      });
-    });
+    function abrirCurso(pagina){
+      var enumerador = {
+        1: 'Programacao/progama',
+        2: 'DevWeb/Desenvolvimento',
+        3: 'Python/python',
+        4: 'InteligenciaArtificial/IA',
+        5: 'DevAppAndroid/DAA',
+        6: 'SegurançaInformacao/SI',
+        7: 'RedesPC/RC',
+        8: 'BancoDeDados/BDSQL',
+        9: 'DevGamesUnity/DGU',
+        10: 'DevOps/DevOps',
+        11: 'CompNuvem/CNAWS',
+      };
 
-    // Filtro de busca
+      const destino = enumerador[pagina];
+      if (destino) {
+        window.location.href = `pages/cursos/${destino}.html`;
+      } else {
+        alert("Curso não encontrado.");
+      }
+    }
+
     document.getElementById('pesquisa').addEventListener('input', function () {
       const termo = this.value.toLowerCase();
-      listaCursos.forEach(card => {
-        const titulo = card.querySelector('h3').textContent.toLowerCase();
-        const descricao = card.querySelector('p').textContent.toLowerCase();
-        card.style.display = (titulo.includes(termo) || descricao.includes(termo)) ? 'block' : 'none';
+      const cursos = document.querySelectorAll('.curso-card');
+
+      cursos.forEach(curso => {
+        const titulo = curso.querySelector('h3').textContent.toLowerCase();
+        const descricao = curso.querySelector('p').textContent.toLowerCase();
+
+        if (titulo.includes(termo) || descricao.includes(termo)) {
+          curso.style.display = 'block';
+        } else {
+          curso.style.display = 'none';
+        }
       });
     });
   </script>
