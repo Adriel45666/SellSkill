@@ -13,21 +13,13 @@
   </header>
 
   <main class="container">
-    <h1 class="titulo-carrinho"><h1><a href="index.html">SELLKILLS</a>Carrinho de Compras</h1>
+    <h1><a href="index.html">SELLSKILLS</a> - Carrinho de Compras</h1>
 
-    <section class="item-carrinho">
-      <img src="imagens/curso-programacao.jpg" alt="Curso de Android" class="imagem-item">
-      <div class="info-item">
-        <h2>Curso: Desenvolvimento de Aplicativos Android</h2>
-        <p>Aprenda a criar apps com Kotlin e Android Studio.</p>
-        <p class="preco">R$ 1.202,55</p>
-        <button class="remover">Remover</button>
-      </div>
-    </section>
+    <div id="itens-carrinho"></div>
 
     <section class="resumo-carrinho">
       <h2>Resumo da compra</h2>
-      <p>Total: <strong>R$ 1.202,55</strong></p>
+      <p>Total: <strong id="total">R$ 0,00</strong></p>
       <button class="finalizar-compra">Finalizar Compra</button>
     </section>
   </main>
@@ -35,5 +27,40 @@
   <footer class="rodape">
     <p>&copy; 2025 SELLSKILLS - Todos os direitos reservados.</p>
   </footer>
+
+  <script>
+    const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+    const container = document.getElementById('itens-carrinho');
+    let total = 0;
+
+    carrinho.forEach((item, index) => {
+      const precoNumerico = parseFloat(item.preco.replace('R$', '').replace(',', '.'));
+      total += precoNumerico;
+
+      const secao = document.createElement('section');
+      secao.classList.add('item-carrinho');
+      secao.innerHTML = `
+        <img src="${item.imagem}" alt="${item.titulo}" class="imagem-item">
+        <div class="info-item">
+          <h2>${item.titulo}</h2>
+          <p>${item.descricao}</p>
+          <p class="preco">${item.preco}</p>
+          <button class="remover" data-index="${index}">Remover</button>
+        </div>
+      `;
+      container.appendChild(secao);
+    });
+
+    document.getElementById('total').textContent = `R$ ${total.toFixed(2).replace('.', ',')}`;
+
+    document.querySelectorAll('.remover').forEach(btn => {
+      btn.addEventListener('click', function () {
+        const index = this.getAttribute('data-index');
+        carrinho.splice(index, 1);
+        localStorage.setItem('carrinho', JSON.stringify(carrinho));
+        location.reload();
+      });
+    });
+  </script>
 </body>
 </html>
