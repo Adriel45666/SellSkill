@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 /* style.css */
 
+=======
+>>>>>>> aac42a7e3d28ff5ecf42351a4f73ef1aec3da8b5
 * {
   margin: 0;
   padding: 0;
@@ -8,14 +11,20 @@
 }
 
 body {
+<<<<<<< HEAD
   position: relative;
   background-color: #0f0f0f;
   color: #fff;
+=======
+  background-color: #0f0f0f;
+  color: #ffffff;
+>>>>>>> aac42a7e3d28ff5ecf42351a4f73ef1aec3da8b5
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   font-size: 20px;
+<<<<<<< HEAD
   font-weight: 600;
   padding: 20px;
   overflow-x: hidden;
@@ -140,6 +149,45 @@ form {
 
 .input-container .toggle-btn:hover {
   color: #0a835b;
+=======
+  font-weight: bold;
+}
+
+.login-container {
+  background-color: #1a1a1a;
+  padding: 30px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 0 15px #4ec868;
+  text-align: center;
+}
+
+.logo-header {
+  margin-bottom: 20px;
+}
+
+.logo-header .logo {
+  font-size: 2.5rem;
+  color: #4ec868;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 6px;
+  background-color: #2a2a2a;
+  color: white;
+}
+
+.login-container input::placeholder {
+  color: #bbbbbb;
+>>>>>>> aac42a7e3d28ff5ecf42351a4f73ef1aec3da8b5
 }
 
 .input-container .toggle-btn svg {
@@ -150,13 +198,18 @@ form {
 
 button[type="submit"] {
   width: 100%;
+<<<<<<< HEAD
   padding: 14px;
+=======
+  padding: 12px;
+>>>>>>> aac42a7e3d28ff5ecf42351a4f73ef1aec3da8b5
   background-color: #4ec868;
   color: #000;
   font-weight: bold;
   border: none;
   border-radius: 6px;
   cursor: pointer;
+<<<<<<< HEAD
   font-size: 18px;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
   user-select: none;
@@ -167,6 +220,13 @@ button[type="submit"] {
 button[type="submit"]:hover {
   background-color: #0a835b;
   box-shadow: 0 6px 12px #0a835bcc;
+=======
+  transition: 0.3s;
+}
+
+.login-container input[type="submit"]:hover {
+  background-color: #0a835b;
+>>>>>>> aac42a7e3d28ff5ecf42351a4f73ef1aec3da8b5
 }
 
 .error-message {
@@ -175,6 +235,11 @@ button[type="submit"]:hover {
   margin-top: 10px;
   min-height: 24px;
   text-align: center;
+<<<<<<< HEAD
+=======
+  margin-top: 15px;
+  font-size: 0.9rem;
+>>>>>>> aac42a7e3d28ff5ecf42351a4f73ef1aec3da8b5
 }
 
 /* Links específicos para Login e Cadastro */
@@ -197,5 +262,20 @@ button[type="submit"]:hover {
 .forgot-password-link a:hover,
 .register-link a:hover {
   text-decoration: underline;
+<<<<<<< HEAD
   color: #0a835b;
 }
+=======
+}
+
+@media(max-width: 768px) {
+  .login-container {
+    width: 90%;
+    padding: 30px;
+  }
+
+  .logo-header {
+    margin-bottom: 20px;
+  }
+}
+>>>>>>> aac42a7e3d28ff5ecf42351a4f73ef1aec3da8b5
