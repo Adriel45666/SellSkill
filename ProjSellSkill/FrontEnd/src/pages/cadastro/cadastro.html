@@ -2,32 +2,316 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Cadastro - SELLSKILLS</title>
-  <link rel="stylesheet" href="cadastro.css" />
-  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Arial", sans-serif;
+    }
+
+    body {
+      position: relative;
+      background-color: #0f0f0f;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-size: 20px;
+      font-weight: 600;
+      padding: 20px;
+      overflow-x: hidden;
+      z-index: 0;
+    }
+
+    .container {
+      text-align: center;
+      width: 100%;
+      max-width: 420px;
+      padding: 0 15px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .logo {
+      font-size: 3rem;
+      color: #4ec868;
+      margin-bottom: 30px;
+      font-weight: 900;
+      letter-spacing: 3px;
+    }
+
+    .form-box {
+      background-color: #1a1a1a;
+      padding: 35px 40px 50px 40px;
+      border-radius: 16px;
+      box-shadow: 0 8px 25px rgba(78, 200, 104, 0.3);
+      overflow: hidden;
+      text-align: left;
+    }
+
+    .form-box h2 {
+      margin-bottom: 30px;
+      color: #4ec868;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    form {
+      width: 100%;
+    }
+
+    .input-container {
+      position: relative;
+      margin-bottom: 25px;
+    }
+
+    .input-container input {
+      width: 100%;
+      padding: 12px 45px 12px 12px;
+      border-radius: 6px;
+      border: none;
+      background-color: #2a2a2a;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 600;
+      outline-offset: 2px;
+      transition: border-color 0.3s ease, background-color 0.3s ease;
+    }
+
+    .input-container input::placeholder {
+      color: #777;
+      font-weight: 400;
+    }
+
+    .input-container input:focus {
+      border: 2px solid #4ec868;
+      background-color: #222;
+      outline: 3px solid rgba(78, 200, 104, 0.5);
+    }
+
+    .input-container .toggle-btn {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: transparent;
+      border: none;
+      color: #4ec868;
+      font-size: 1.5rem;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .toggle-btn svg {
+      width: 24px;
+      height: 24px;
+      fill: #4ec868;
+      transition: fill 0.3s ease;
+    }
+
+    .toggle-btn:hover svg {
+      fill: #0a835b;
+    }
+
+    button[type="submit"] {
+      width: 100%;
+      padding: 14px;
+      background-color: #4ec868;
+      color: #000;
+      font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 18px;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      user-select: none;
+      margin-top: 10px;
+      box-shadow: 0 4px 8px #4ec868bb;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #0a835b;
+      box-shadow: 0 6px 15px rgba(10, 131, 91, 0.6);
+    }
+
+    .error-message {
+      color: #ffffff;
+      font-weight: bold;
+      margin-top: 10px;
+      min-height: 24px;
+      text-align: center;
+    }
+
+    .login-link {
+      margin-top: 15px;
+      font-size: 0.95rem;
+      text-align: center;
+      color: #fff;
+    }
+
+    .login-link a {
+      color: #4ec868;
+      text-decoration: none;
+      font-weight: 700;
+      transition: color 0.3s ease;
+    }
+
+    .login-link a:hover {
+      text-decoration: underline;
+      color: #0a835b;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        max-width: 90%;
+        padding: 0 15px;
+      }
+
+      .logo {
+        font-size: 2.5rem;
+      }
+
+      .form-box {
+        padding: 25px;
+      }
+
+      button[type="submit"] {
+        padding: 12px;
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
 <body>
   <div class="container">
     <h1 class="logo">SELLSKILLS</h1>
     <div class="form-box">
       <h2>Crie sua conta</h2>
 
-      <form id="cadastroForm">
-        <input type="text" id="nome" name="nome" placeholder="Nome completo" required />
-        <input type="email" id="email" name="email" placeholder="E-mail" required />
-        <input type="password" id="senha" name="senha" placeholder="Senha" required />
-        <input type="password" id="confirmarSenha" name="confirmarSenha" placeholder="Confirmar senha" required />
-        <button type="button" id="cadastroButton">Cadastrar</button>
+      <form id="cadastroForm" novalidate>
+        <div class="input-container no-toggle">
+          <input type="text" id="nome" name="nome" placeholder="Nome completo" required autocomplete="off" />
+        </div>
+        <div class="input-container no-toggle">
+          <input type="email" id="email" name="email" placeholder="E-mail" required autocomplete="off" />
+        </div>
+
+        <div class="input-container">
+          <input type="password" id="senha" name="senha" placeholder="Senha" required />
+          <button type="button" class="toggle-btn" aria-label="Mostrar senha" id="togglePassword">
+            <svg class="icon-eye-open" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zm0 13c-3.03 0-5.5-2.47-5.5-5.5s2.47-5.5 5.5-5.5 5.5 2.47 5.5 5.5-2.47 5.5-5.5 5.5zm0-9c-1.93 0-3.5 1.57-3.5 3.5s1.57 3.5 3.5 3.5 3.5-1.57 3.5-3.5-1.57-3.5-3.5-3.5z"/>
+            </svg>
+            <svg class="icon-eye-closed" viewBox="0 0 24 24" fill="currentColor" style="display: none;">
+              <path d="M12 7c-2.43 0-4.47 1.25-5.48 3.12l1.46 1.46C8.5 9.77 10.11 9 12 9c2.72 0 5.18 1.43 6.47 3.53l1.46-1.46C20.18 8.1 16.5 7 12 7zm0 10c2.43 0 4.47-1.25 5.48-3.12l-1.46-1.46C15.5 14.23 13.89 15 12 15c-2.72 0-5.18-1.43-6.47-3.53l-1.46 1.46C3.82 15.9 7.5 17 12 17zm0-6.5c-1.93 0-3.5 1.57-3.5 3.5s1.57 3.5 3.5 3.5 3.5-1.57 3.5-3.5-1.57-3.5-3.5-3.5zM2 4.27l2.19 2.19C2.71 7.82 1 9.79 1 12c1.73 4.39 6 7.5 11 7.5 1.79 0 3.49-.39 5.06-1.12L19.73 21 21 19.73 4.27 3 2 4.27z"/>
+            </svg>
+          </button>
+        </div>
+
+        <div class="input-container">
+          <input type="password" id="confirmarSenha" name="confirmarSenha" placeholder="Confirmar senha" required />
+        </div>
+
+        <p id="erro" class="error-message" role="alert" aria-live="assertive"></p>
+        <button type="submit" id="cadastroButton">Cadastrar</button>
       </form>
 
       <p class="login-link">
-        Já tem uma conta?
-        <a href="file:///C:/Users/SKA/Desktop/SellSkill/src/">Login aqui</a>
+        Já tem uma conta? <a href="file:///C:/Users/SKA/Desktop/PROJETOOO/SellSkill/ProjSellSkill/FrontEnd/src/pages/login/login.html">Login aqui</a>
       </p>
     </div>
   </div>
 
-  <script src="cadastro.js"></script>
+  <script>
+    const form = document.getElementById('cadastroForm');
+    const erroMessage = document.getElementById('erro');
+    const nomeInput = document.getElementById('nome');
+    const emailInput = document.getElementById('email');
+    const senhaInput = document.getElementById('senha');
+    const confirmarSenhaInput = document.getElementById('confirmarSenha');
 
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      erroMessage.textContent = '';
+      erroMessage.style.color = '#fff';
+
+      const nome = nomeInput.value.trim();
+      const email = emailInput.value.trim();
+      const senha = senhaInput.value;
+      const confirmarSenha = confirmarSenhaInput.value;
+
+      const emailRegex = /^[a-zA-Z]+@(gmail\.com|hotmail\.com)$/;
+      const senhaRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*[@\-_.])[A-Za-z\d@\-_.]{6,20}$/;
+
+      if (!nome) {
+        erroMessage.textContent = 'O campo nome é obrigatório.';
+        return;
+      }
+      if (nome.length > 67) {
+        erroMessage.textContent = 'O nome deve ter no máximo 67 caracteres.';
+        return;
+      }
+
+      if (!email) {
+        erroMessage.textContent = 'O campo e-mail é obrigatório.';
+        return;
+      }
+      if (!emailRegex.test(email)) {
+        erroMessage.textContent = 'E-mail inválido';
+        return;
+      }
+
+      if (!senha) {
+        erroMessage.textContent = 'O campo senha é obrigatório.';
+        return;
+      }
+      if (!senhaRegex.test(senha)) {
+        erroMessage.textContent =
+          'A senha deve ter no máximo 8 caracteres contendo: Letra maiuscula, caracteres como (@,-,_,.-,) e número';
+        return;
+      }
+
+      if (senha !== confirmarSenha) {
+        erroMessage.textContent = 'As senhas devem ser iguais.';
+        return;
+      }
+
+      erroMessage.style.color = '#4ec868';
+      erroMessage.textContent = 'Cadastro realizado com sucesso! Redirecionando...';
+
+      setTimeout(() => {
+        window.location.href = 'file:///C:/Users/SKA/Desktop/PROJETOOO/SellSkill/ProjSellSkill/FrontEnd/src/pages/login/login.html';
+      }, 1000);
+    });
+
+    confirmarSenhaInput.addEventListener('input', () => {
+      if (senhaInput.value !== confirmarSenhaInput.value) {
+        erroMessage.style.color = '#ff5555';
+        erroMessage.textContent = 'As senhas não coincidem.';
+      } else {
+        erroMessage.textContent = '';
+      }
+    });
+
+    const togglePasswordButton = document.getElementById('togglePassword');
+    const [openIcon, closedIcon] = togglePasswordButton.querySelectorAll('svg');
+
+    togglePasswordButton.addEventListener('click', () => {
+      const isHidden = senhaInput.type === 'password';
+
+      senhaInput.type = isHidden ? 'text' : 'password';
+      confirmarSenhaInput.type = isHidden ? 'text' : 'password';
+
+      openIcon.style.display = isHidden ? 'none' : 'block';
+      closedIcon.style.display = isHidden ? 'block' : 'none';
+
+      togglePasswordButton.setAttribute('aria-label', isHidden ? 'Ocultar senha' : 'Mostrar senha');
+    });
+  </script>
 </body>
 </html>
