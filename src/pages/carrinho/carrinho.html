@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SELLSKILLS - Carrinho</title>
+  <link rel="stylesheet" href="carrinho.css" />
+</head>
+<body>
+  <header class="topo">
+    <div class="logo">SELLSKILLS</div>
+    <input type="text" placeholder="Buscar cursos..." class="barra-pesquisa">
+  </header>
+
+  <main class="container">
+    <h1><a href="index.html">SELLSKILLS</a> - Carrinho de Compras</h1>
+
+    <div id="itens-carrinho"></div>
+
+    <section class="resumo-carrinho">
+      <h2>Resumo da compra</h2>
+      <p>Total: <strong id="total">R$ 0,00</strong></p>
+      <button class="finalizar-compra">Finalizar Compra</button>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <p>&copy; 2025 SELLSKILLS - Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+    const container = document.getElementById('itens-carrinho');
+    let total = 0;
+
+    carrinho.forEach((item, index) => {
+      const precoNumerico = parseFloat(item.preco.replace('R$', '').replace(',', '.'));
+      total += precoNumerico;
+
+      const secao = document.createElement('section');
+      secao.classList.add('item-carrinho');
+      secao.innerHTML = `
+        <img src="${item.imagem}" alt="${item.titulo}" class="imagem-item">
+        <div class="info-item">
+          <h2>${item.titulo}</h2>
+          <p>${item.descricao}</p>
+          <p class="preco">${item.preco}</p>
+          <button class="remover" data-index="${index}">Remover</button>
+        </div>
+      `;
+      container.appendChild(secao);
+    });
+
+    document.getElementById('total').textContent = `R$ ${total.toFixed(2).replace('.', ',')}`;
+
+    document.querySelectorAll('.remover').forEach(btn => {
+      btn.addEventListener('click', function () {
+        const index = this.getAttribute('data-index');
+        carrinho.splice(index, 1);
+        localStorage.setItem('carrinho', JSON.stringify(carrinho));
+        location.reload();
+      });
+    });
+  </script>
+</body>
+</html>
