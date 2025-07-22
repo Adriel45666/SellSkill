@@ -1,0 +1,281 @@
+<<<<<<< HEAD
+/* style.css */
+
+=======
+>>>>>>> aac42a7e3d28ff5ecf42351a4f73ef1aec3da8b5
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
+}
+
+body {
+<<<<<<< HEAD
+  position: relative;
+  background-color: #0f0f0f;
+  color: #fff;
+=======
+  background-color: #0f0f0f;
+  color: #ffffff;
+>>>>>>> aac42a7e3d28ff5ecf42351a4f73ef1aec3da8b5
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 20px;
+<<<<<<< HEAD
+  font-weight: 600;
+  padding: 20px;
+  overflow-x: hidden;
+  z-index: 0;
+}
+
+/* Fundo com logo quase transparente */
+body::before {
+  content: "";
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70vw;
+  height: 70vw;
+  max-width: 600px;
+  max-height: 600px;
+  background-image: url('logo.png'); /* Troque pelo caminho da sua logo */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  opacity: 0.08;
+  pointer-events: none;
+  z-index: -1;
+  transition: transform 0.3s ease;
+}
+
+/* Classe para mover a logo quando hover */
+body.led-move::before {
+  transform: translate(calc(-50% + 15px), calc(-50% - 15px));
+  opacity: 0.12; /* Opcional: um pouco mais visível quando mexe */
+}
+
+.container {
+  text-align: center;
+  width: 100%;
+  max-width: 420px;
+  padding: 0 15px;
+  position: relative;
+  z-index: 1;
+}
+
+.logo {
+  font-size: 3rem;
+  color: #4ec868;
+  margin-bottom: 30px;
+  font-weight: 900;
+  letter-spacing: 3px;
+}
+
+.form-box {
+  background-color: #1a1a1a;
+  padding: 35px 40px 50px 40px;
+  border-radius: 16px;
+  box-shadow: 0 0 25px #4ec868aa;
+  overflow: hidden;
+  text-align: left;
+}
+
+.form-box h2 {
+  margin-bottom: 30px;
+  color: #4ec868;
+  font-weight: 700;
+  text-align: center;
+}
+
+form {
+  width: 100%;
+}
+
+.input-container {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.input-container input {
+  width: 100%;
+  padding: 12px 45px 12px 12px; /* espaço para botão */
+  border-radius: 6px;
+  border: none;
+  background-color: #2a2a2a;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  outline-offset: 2px;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.input-container input::placeholder {
+  color: #777;
+  font-weight: 400;
+}
+
+.input-container input:focus {
+  border: 2px solid #4ec868;
+  background-color: #222;
+}
+
+/* Se não tiver botão toggle, tirar o padding-right extra */
+.input-container.no-toggle input {
+  padding-right: 12px;
+}
+
+.input-container .toggle-btn {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: #4ec868;
+  font-size: 0; /* Oculta o texto para usar SVG */
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.3s ease;
+  display: flex; /* Para centralizar o SVG */
+  align-items: center;
+  justify-content: center;
+  width: 24px; /* Tamanho do SVG */
+  height: 24px; /* Tamanho do SVG */
+}
+
+.input-container .toggle-btn:hover {
+  color: #0a835b;
+=======
+  font-weight: bold;
+}
+
+.login-container {
+  background-color: #1a1a1a;
+  padding: 30px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 0 15px #4ec868;
+  text-align: center;
+}
+
+.logo-header {
+  margin-bottom: 20px;
+}
+
+.logo-header .logo {
+  font-size: 2.5rem;
+  color: #4ec868;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 6px;
+  background-color: #2a2a2a;
+  color: white;
+}
+
+.login-container input::placeholder {
+  color: #bbbbbb;
+>>>>>>> aac42a7e3d28ff5ecf42351a4f73ef1aec3da8b5
+}
+
+.input-container .toggle-btn svg {
+  width: 20px; /* Tamanho do ícone SVG */
+  height: 20px; /* Tamanho do ícone SVG */
+  fill: currentColor; /* Usa a cor do botão */
+}
+
+button[type="submit"] {
+  width: 100%;
+<<<<<<< HEAD
+  padding: 14px;
+=======
+  padding: 12px;
+>>>>>>> aac42a7e3d28ff5ecf42351a4f73ef1aec3da8b5
+  background-color: #4ec868;
+  color: #000;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+<<<<<<< HEAD
+  font-size: 18px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  user-select: none;
+  margin-top: 10px;
+  box-shadow: 0 4px 8px #4ec868bb;
+}
+
+button[type="submit"]:hover {
+  background-color: #0a835b;
+  box-shadow: 0 6px 12px #0a835bcc;
+=======
+  transition: 0.3s;
+}
+
+.login-container input[type="submit"]:hover {
+  background-color: #0a835b;
+>>>>>>> aac42a7e3d28ff5ecf42351a4f73ef1aec3da8b5
+}
+
+.error-message {
+  color: #ff5252;
+  font-weight: bold;
+  margin-top: 10px;
+  min-height: 24px;
+  text-align: center;
+<<<<<<< HEAD
+=======
+  margin-top: 15px;
+  font-size: 0.9rem;
+>>>>>>> aac42a7e3d28ff5ecf42351a4f73ef1aec3da8b5
+}
+
+/* Links específicos para Login e Cadastro */
+.forgot-password-link,
+.register-link {
+  margin-top: 15px;
+  font-size: 0.95rem;
+  text-align: center;
+  color: #fff;
+}
+
+.forgot-password-link a,
+.register-link a {
+  color: #4ec868;
+  text-decoration: none;
+  font-weight: 700;
+  transition: color 0.3s ease;
+}
+
+.forgot-password-link a:hover,
+.register-link a:hover {
+  text-decoration: underline;
+<<<<<<< HEAD
+  color: #0a835b;
+}
+=======
+}
+
+@media(max-width: 768px) {
+  .login-container {
+    width: 90%;
+    padding: 30px;
+  }
+
+  .logo-header {
+    margin-bottom: 20px;
+  }
+}
+>>>>>>> aac42a7e3d28ff5ecf42351a4f73ef1aec3da8b5

@@ -1,0 +1,152 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
+}
+
+body {
+  position: relative;
+  background-color: #0f0f0f;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 20px;
+  overflow-x: hidden;
+  z-index: 0;
+}
+
+.container {
+  text-align: center;
+  width: 100%;
+  max-width: 420px;
+  padding: 0 15px;
+  position: relative;
+  z-index: 1;
+}
+
+.logo {
+  font-size: 3rem;
+  color: #4ec868;
+  margin-bottom: 30px;
+  font-weight: 900;
+  letter-spacing: 3px;
+}
+
+.form-box {
+  background-color: #1a1a1a;
+  padding: 35px 40px 50px 40px;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(78, 200, 104, 0.3);
+  overflow: hidden;
+  text-align: left;
+}
+
+.form-box h2 {
+  margin-bottom: 30px;
+  color: #4ec868;
+  font-weight: 700;
+  text-align: center;
+}
+
+form {
+  width: 100%;
+}
+
+.input-container {
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.input-container input {
+  width: 100%;
+  padding: 12px 45px 12px 12px;
+  border-radius: 6px;
+  border: none;
+  background-color: #2a2a2a;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  outline-offset: 2px;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.input-container input::placeholder {
+  color: #777;
+  font-weight: 400;
+}
+
+.input-container input:focus {
+  border: 2px solid #4ec868;
+  background-color: #222;
+  outline: 3px solid rgba(78, 200, 104, 0.5);
+}
+
+/* Botão de mostrar/ocultar senha */
+.input-container .toggle-btn {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: #4ec868;
+  font-size: 0;
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+}
+
+.input-container .toggle-btn:hover {
+  color: #0a835b;
+}
+
+.input-container .toggle-btn svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+.icon-eye-closed {
+  display: block;
+}
+
+.icon-eye-open {
+  display: none;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 14px;
+  background-color: #4ec868;
+  color: #000;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  user-select: none;
+  margin-top: 10px;
+  box-shadow: 0 4px 8px #4ec868bb;
+}
+
+button[type="submit"]:hover {
+  background-color: #0a835b;
+  box-shadow: 0 6px 15px rgba(10, 131, 91, 0.6);
+}
+
+.error-message {
+  color: #96c27c;
+  font-weight: bold;
+  margin-top: 10px;
+  min-height: 24px;
+  text
