@@ -1,9 +1,0 @@
-com\ska\SellSkill\dto\UsuarioDTO.class
-com\ska\SellSkill\service\UsuarioService.class
-com\ska\SellSkill\controllers\UsuarioController.class
-com\ska\SellSkill\model\LoginModel.class
-com\ska\SellSkill\repository\impl\UsuarioRepositoryImpl.class
-com\ska\SellSkill\repository\UsuarioRepository.class
-com\ska\SellSkill\repository\custom\UsuarioRepositoryCustom.class
-com\ska\SellSkill\model\UsuarioModel.class
-com\ska\SellSkill\SellSkillApplication.class
