@@ -5,26 +5,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>SELLSKILLS - Cursos</title>
   <link rel="stylesheet" href="main.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
   <header class="topo">
-    <div class="logo">SELLSKILLS</div>
-    <input id="pesquisa" type="text" placeholder="Buscar cursos..." class="barra-pesquisa">
+    <div class="header-conteudo">
+      <!-- Logo com imagem -->
+      <div class="logo">
+        <img src="resource/SellSkill.png" alt="Logo SELLSKILLS" />
+      </div>
+
+      <!-- Campo de pesquisa -->
+      <input id="pesquisa" type="text" placeholder="Buscar cursos..." class="barra-pesquisa">
+
+      <!-- Botão do carrinho -->
+      <div class="botao-carrinho-header" onclick="window.location.href='pages/carrinho/carrinho.html'">
+        <i class="fas fa-shopping-cart" aria-hidden="true"></i>
+      </div>
+    </div>
   </header>
 
   <main class="container">
     <section class="lista-cursos">
-      <div class="curso-card" data-id="1">
+      <div class="curso-card" data-id="1" onclick="abrirCurso(1)">
         <h3>Segurança da Informação</h3>
         <p>Proteja dados, redes e sistemas contra ameaças cibernéticas</p>
       </div>
-      <div class="curso-card" data-id="2">
+      <div class="curso-card" data-id="2" onclick="abrirCurso(2)">
         <h3>Desenvolvimento Web Full Stack</h3>
         <p>HTML, CSS, JavaScript, Node.js e mais</p>
       </div>
-      <div class="curso-card" data-id="3">
+      <div class="curso-card" data-id="3" onclick="abrirCurso(3)">
         <h3>Inteligência Artificial com Python</h3>
         <p>Crie modelos de IA com aprendizado de máquina</p>
+      </div>
+      <div class="curso-card" data-id="4" onclick="abrirCurso(4)">
+        <h3>DevOps e Integração Contínua</h3>
+        <p>Docker, Jenkins e automação de deploy</p>
       </div>
     </section>
   </main>
