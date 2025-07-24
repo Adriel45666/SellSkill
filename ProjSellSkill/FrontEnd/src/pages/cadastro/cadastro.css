@@ -8,101 +8,134 @@
 body {
   position: relative;
   background-color: #0f0f0f;
-  color: #fff;
+  color: #ffffff; /* Adjusted to match the second snippet's body color */
   display: flex;
   justify-content: center;
   align-items: center;
-  block-size: 100vh;
+  height: 100vh;
   font-size: 20px;
-  font-weight: 600;
+  font-weight: bold; /* Adjusted to match the second snippet's font-weight */
   padding: 20px;
   overflow-x: hidden;
   z-index: 0;
 }
 
+/* Fundo com logo quase transparente */
+body::before {
+  content: "";
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70vw;
+  height: 70vw;
+  max-width: 600px;
+  max-height: 600px;
+  background-image: url('logo.png'); /* Troque pelo caminho da sua logo */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  opacity: 0.08;
+  pointer-events: none;
+  z-index: -1;
+  transition: transform 0.3s ease;
+}
+
+/* Classe para mover a logo quando hover */
+body.led-move::before {
+  transform: translate(calc(-50% + 15px), calc(-50% - 15px));
+  opacity: 0.12; /* Opcional: um pouco mais visível quando mexe */
+}
+
 .container {
   text-align: center;
-  inline-size: 100%;
-  max-inline-size: 420px;
-  padding: 0 15px;
+  width: 100%;
+  max-width: 400px; /* Adjusted to match the second snippet's max-width for form-box */
+  padding: 0 15px; /* Keeping some padding for smaller screens */
   position: relative;
   z-index: 1;
 }
 
 .logo {
-  font-size: 3rem;
+  font-size: 2.5rem; /* Adjusted to match the second snippet's font-size */
   color: #4ec868;
-  margin-block-end: 30px;
-  font-weight: 900;
-  letter-spacing: 3px;
+  margin-bottom: 20px; /* Adjusted to match the second snippet's margin */
+  font-weight: bold; /* Adjusted to match the second snippet's font-weight */
+  letter-spacing: 2px; /* Adjusted to match the second snippet's letter-spacing */
 }
 
 .form-box {
   background-color: #1a1a1a;
-  padding: 35px 40px 50px 40px;
-  border-radius: 16px;
-  box-shadow: 0 8px 25px rgba(78, 200, 104, 0.3);
-  overflow: hidden;
-  text-align: start;
+  padding: 30px; /* Adjusted to match the second snippet's padding */
+  border-radius: 12px; /* Adjusted to match the second snippet's border-radius */
+  width: 100%;
+  max-width: 400px; /* Adjusted to match the second snippet's max-width */
+  box-shadow: 0 0 15px #4ec868; /* Adjusted to match the second snippet's box-shadow */
+  overflow: hidden; /* Keeping overflow hidden for consistency */
+  text-align: center; /* Adjusted to match the second snippet's text-align */
 }
 
 .form-box h2 {
-  margin-block-end: 30px;
+  margin-bottom: 20px; /* Adjusted to match the second snippet's margin */
   color: #4ec868;
-  font-weight: 700;
+  font-weight: 700; /* Keeping a strong weight for headings */
   text-align: center;
 }
 
 form {
-  inline-size: 100%;
+  width: 100%;
 }
 
 .input-container {
   position: relative;
-  margin-block-end: 25px;
+  margin-bottom: 20px; /* Keeping specific margin for input containers */
 }
 
-.input-container input {
-  inline-size: 100%;
-  padding: 12px 45px 12px 12px;
+.input-container input { /* Targeting specific input types for better control */
+  width: 100%;
+  padding: 12px 45px 12px 12px; /* Space for toggle button */
   border-radius: 6px;
   border: none;
   background-color: #2a2a2a;
   color: #fff;
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 16px; /* Keeping a specific font-size */
+  font-weight: 600; /* Keeping a specific font-weight */
   outline-offset: 2px;
   transition: border-color 0.3s ease, background-color 0.3s ease;
 }
 
 .input-container input::placeholder {
-  color: #777;
-  font-weight: 400;
+  color: #bbbbbb; /* Adjusted to match the second snippet's placeholder color */
+  font-weight: 400; /* Keeping a lighter weight for placeholder */
 }
 
 .input-container input:focus {
   border: 2px solid #4ec868;
   background-color: #222;
-  outline: 3px solid rgba(78, 200, 104, 0.5);
 }
 
-/* Botão de mostrar/ocultar senha */
+/* Se não tiver botão toggle, tirar o padding-right extra */
+.input-container.no-toggle input {
+  padding-right: 12px;
+}
+
 .input-container .toggle-btn {
   position: absolute;
-  inset-inline-end: 10px;
-  inset-block-start: 50%;
+  right: 10px;
+  top: 50%;
   transform: translateY(-50%);
   background: transparent;
   border: none;
   color: #4ec868;
-  font-size: 0;
+  font-size: 0; /* Oculta o texto para usar SVG */
   cursor: pointer;
   user-select: none;
-  display: flex;
+  transition: color 0.3s ease;
+  display: flex; /* Para centralizar o SVG */
   align-items: center;
   justify-content: center;
-  inline-size: 24px;
-  block-size: 24px;
+  width: 24px; /* Tamanho do SVG */
+  height: 24px; /* Tamanho do SVG */
 }
 
 .input-container .toggle-btn:hover {
@@ -110,43 +143,63 @@ form {
 }
 
 .input-container .toggle-btn svg {
-  inline-size: 20px;
-  block-size: 20px;
-  fill: currentColor;
-}
-
-.icon-eye-closed {
-  display: block;
-}
-
-.icon-eye-open {
-  display: none;
+  width: 20px; /* Tamanho do ícone SVG */
+  height: 20px; /* Tamanho do ícone SVG */
+  fill: currentColor; /* Usa a cor do botão */
 }
 
 button[type="submit"] {
-  inline-size: 100%;
-  padding: 14px;
+  width: 100%;
+  padding: 12px; /* Adjusted to match the second snippet's padding */
   background-color: #4ec868;
   color: #000;
   font-weight: bold;
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  font-size: 18px;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  font-size: 18px; /* Keeping a slightly larger font-size for buttons */
+  transition: 0.3s; /* Adjusted to match the second snippet's transition */
   user-select: none;
-  margin-block-start: 10px;
-  box-shadow: 0 4px 8px #4ec868bb;
+  margin-top: 10px;
+  box-shadow: none; /* Removed specific box-shadow to match the simpler style */
 }
 
 button[type="submit"]:hover {
   background-color: #0a835b;
-  box-shadow: 0 6px 15px rgba(10, 131, 91, 0.6);
+  box-shadow: none; /* Removed specific box-shadow on hover */
 }
 
 .error-message {
   color: #96c27c;
   font-weight: bold;
-  margin-block-start: 10px;
-  min-block-size: 24px;
+  margin-top: 10px;
+  min-height: 24px;
+  text-align: center;
+}
+
+.login-link {
+  margin-top: 15px;
+  font-size: 0.9rem; /* Adjusted to match the second snippet's font-size */
+  text-align: center;
+  color: #fff; /* Ensures color for the surrounding text */
+}
+
+.login-link a {
+  color: #4ec868;
+  text-decoration: none;
+  font-weight: 700; /* Keeping a stronger font-weight for links */
+  transition: 0.3s; /* Adjusted to match the second snippet's transition */
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+  color: #0a835b;
+}
+
+/* Added media query for responsiveness from the original second snippet's style */
+@media (max-width: 768px) {
+  .form-box {
+    width: 90%;
+    padding: 30px;
+  }
 }
