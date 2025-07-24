@@ -12,7 +12,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  block-size: 100vh;
   font-size: 20px;
   font-weight: 600;
   padding: 20px;
@@ -22,8 +22,8 @@ body {
 
 .container {
   text-align: center;
-  width: 100%;
-  max-width: 420px;
+  inline-size: 100%;
+  max-inline-size: 420px;
   padding: 0 15px;
   position: relative;
   z-index: 1;
@@ -32,7 +32,7 @@ body {
 .logo {
   font-size: 3rem;
   color: #4ec868;
-  margin-bottom: 30px;
+  margin-block-end: 30px;
   font-weight: 900;
   letter-spacing: 3px;
 }
@@ -43,27 +43,27 @@ body {
   border-radius: 16px;
   box-shadow: 0 8px 25px rgba(78, 200, 104, 0.3);
   overflow: hidden;
-  text-align: left;
+  text-align: start;
 }
 
 .form-box h2 {
-  margin-bottom: 30px;
+  margin-block-end: 30px;
   color: #4ec868;
   font-weight: 700;
   text-align: center;
 }
 
 form {
-  width: 100%;
+  inline-size: 100%;
 }
 
 .input-container {
   position: relative;
-  margin-bottom: 25px;
+  margin-block-end: 25px;
 }
 
 .input-container input {
-  width: 100%;
+  inline-size: 100%;
   padding: 12px 45px 12px 12px;
   border-radius: 6px;
   border: none;
@@ -89,8 +89,8 @@ form {
 /* Botão de mostrar/ocultar senha */
 .input-container .toggle-btn {
   position: absolute;
-  right: 10px;
-  top: 50%;
+  inset-inline-end: 10px;
+  inset-block-start: 50%;
   transform: translateY(-50%);
   background: transparent;
   border: none;
@@ -101,8 +101,8 @@ form {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 24px;
-  height: 24px;
+  inline-size: 24px;
+  block-size: 24px;
 }
 
 .input-container .toggle-btn:hover {
@@ -110,8 +110,8 @@ form {
 }
 
 .input-container .toggle-btn svg {
-  width: 20px;
-  height: 20px;
+  inline-size: 20px;
+  block-size: 20px;
   fill: currentColor;
 }
 
@@ -124,7 +124,7 @@ form {
 }
 
 button[type="submit"] {
-  width: 100%;
+  inline-size: 100%;
   padding: 14px;
   background-color: #4ec868;
   color: #000;
@@ -135,7 +135,7 @@ button[type="submit"] {
   font-size: 18px;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
   user-select: none;
-  margin-top: 10px;
+  margin-block-start: 10px;
   box-shadow: 0 4px 8px #4ec868bb;
 }
 
@@ -147,6 +147,6 @@ button[type="submit"]:hover {
 .error-message {
   color: #96c27c;
   font-weight: bold;
-  margin-top: 10px;
-  min-height: 24px;
-  text
+  margin-block-start: 10px;
+  min-block-size: 24px;
+}
