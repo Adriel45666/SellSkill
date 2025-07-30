@@ -22,6 +22,17 @@
       <div class="botao-carrinho-header" onclick="window.location.href='pages/carrinho/carrinho.html'">
         <i class="fas fa-shopping-cart" aria-hidden="true"></i>
       </div>
+
+      <!-- Menu hamburguer -->
+      <div class="menu-hamburguer">
+        <i class="fas fa-bars" onclick="toggleMenu()"></i>
+        <div class="menu-opcoes" id="menuOpcoes">
+          <a href="pages/carrinho/carrinho.html">Carrinho</a>
+          <a href="#">Conta</a>
+          <a href="#">Sobre Nós</a>
+          <a href="#">Sair</a>
+        </div>
+      </div>
     </div>
   </header>
 
@@ -67,5 +78,20 @@
   </footer>
 
   <script src="index.js"></script>
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("menuOpcoes");
+      menu.style.display = menu.style.display === "block" ? "none" : "block";
+    }
+
+    // Fecha o menu se clicar fora
+    document.addEventListener("click", function (event) {
+      const menu = document.getElementById("menuOpcoes");
+      const icon = document.querySelector(".menu-hamburguer i");
+      if (menu && !menu.contains(event.target) && !icon.contains(event.target)) {
+        menu.style.display = "none";
+      }
+    });
+  </script>
 </body>
 </html>
