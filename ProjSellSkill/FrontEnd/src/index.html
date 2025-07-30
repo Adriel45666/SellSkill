@@ -10,17 +10,17 @@
 <body>
   <header class="topo">
     <div class="header-conteudo">
-      <!-- Logo com imagem -->
+      <!-- Logo -->
       <div class="logo">
         <img src="resource/SellSkill.png" alt="Logo SELLSKILLS" />
       </div>
 
-      <!-- Campo de pesquisa -->
-      <input id="pesquisa" type="text" placeholder="Buscar cursos..." class="barra-pesquisa">
+      <!-- Barra de pesquisa -->
+      <input id="pesquisa" type="text" placeholder="Buscar cursos..." class="barra-pesquisa" />
 
       <!-- Botão do carrinho -->
       <div class="botao-carrinho-header" onclick="window.location.href='pages/carrinho/carrinho.html'">
-        <i class="fas fa-shopping-cart" aria-hidden="true"></i>
+        <i class="fas fa-shopping-cart"></i>
       </div>
 
       <!-- Menu hamburguer -->
@@ -28,7 +28,7 @@
         <i class="fas fa-bars" onclick="toggleMenu()"></i>
         <div class="menu-opcoes" id="menuOpcoes">
           <a href="pages/carrinho/carrinho.html">Carrinho</a>
-          <a href="#">Conta</a>
+          <a href="pages/perfil/perfil.html">perfil</a>
           <a href="#">Sobre Nós</a>
           <a href="#">Sair</a>
         </div>
@@ -50,26 +50,7 @@
         <h3>Inteligência Artificial com Python</h3>
         <p>Crie modelos de IA com aprendizado de máquina</p>
       </div>
-      <div class="curso-card" data-id="4" onclick="abrirCurso(4)">
-        <h3>Marketing Digital</h3>
-        <p>Domine SEO, redes sociais e campanhas de anúncios</p>
-      </div>
-      <div class="curso-card" data-id="5" onclick="abrirCurso(5)">
-        <h3>Gestão de Projetos</h3>
-        <p>Aprenda a gerenciar projetos com metodologias ágeis</p>
-      </div>
-      <div class="curso-card" data-id="6" onclick="abrirCurso(6)">
-        <h3>Excel Avançado</h3>
-        <p>Funções, dashboards e automações com VBA</p>
-      </div>
-      <div class="curso-card" data-id="7" onclick="abrirCurso(7)">
-        <h3>Design Gráfico com Photoshop</h3>
-        <p>Crie artes visuais incríveis com o Adobe Photoshop</p>
-      </div>
-      <div class="curso-card" data-id="8" onclick="abrirCurso(8)">
-        <h3>Empreendedorismo e Startups</h3>
-        <p>Transforme ideias em negócios escaláveis</p>
-      </div>
+      <!-- Adicione mais cursos conforme necessário -->
     </section>
   </main>
 
@@ -77,7 +58,6 @@
     <p>&copy; 2025 SELLSKILLS - Todos os direitos reservados.</p>
   </footer>
 
-  <script src="index.js"></script>
   <script>
     function toggleMenu() {
       const menu = document.getElementById("menuOpcoes");
@@ -92,6 +72,10 @@
         menu.style.display = "none";
       }
     });
+
+    function abrirCurso(id) {
+      window.location.href = `pages/curso/curso.html?id=${id}`;
+    }
   </script>
 </body>
 </html>
