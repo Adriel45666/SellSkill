@@ -4,22 +4,22 @@
  */
 package com.ska.SellSkill.controllers;
 
-import com.ska.SellSkill.dto.UsuarioDTO;
-import com.ska.SellSkill.service.UsuarioService;
+import com.ska.SellSkill.dto.CadastroDTO;
+import com.ska.SellSkill.service.CadastroService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/UsuarioController")
+@RequestMapping("/CadastroController")
 @CrossOrigin(origins = {"http://127.0.0.1:5500", "null"}) 
-public class UsuarioController {
+public class CadastroController {
 
     @Autowired
-    private UsuarioService usuarioService;
+    private CadastroService usuarioService;
 
     @PostMapping("/cadastro")
-    public ResponseEntity<String> cadastrarUsuario(@RequestBody UsuarioDTO usuarioDTO) {
+    public ResponseEntity<String> cadastrarUsuario(@RequestBody CadastroDTO usuarioDTO) {
         String resultado = usuarioService.cadastrarUsuario(usuarioDTO);
         return ResponseEntity.ok(resultado);
     }   

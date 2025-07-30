@@ -6,19 +6,19 @@ package com.ska.SellSkill.service;
 
 
 
-import com.ska.SellSkill.dto.UsuarioDTO;
+import com.ska.SellSkill.dto.CadastroDTO;
 import com.ska.SellSkill.model.UsuarioModel;
-import com.ska.SellSkill.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import com.ska.SellSkill.repository.UsuarioRepository;
 
 @Service
-public class UsuarioService {
+public class CadastroService {
 
     @Autowired
     private UsuarioRepository usuarioRepository;
 
-    public String cadastrarUsuario(UsuarioDTO usuarioDTO) {
+    public String cadastrarUsuario(CadastroDTO usuarioDTO) {
         try {
             // Criação do usuário a partir do DTO
             UsuarioModel usuario = new UsuarioModel();

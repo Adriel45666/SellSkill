@@ -1,31 +1,24 @@
-package com.ska.SellSkill.model;
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package com.ska.SellSkill.dto;
 
-import jakarta.persistence.*;
+/**
+ *
+ * @author SKA
+ */
+public class CadastroDTO {
 
-@Entity
-@Table(name = "tb_usuario")
-public class UsuarioModel {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    @Column(name = "nome_completo")
     private String nome_completo;
 
-    @Column(name = "email")
     private String email;
 
-    @Column(name = "senha")
     private String senha;
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
+    } 
 
     public void setNome_completo(String nome_completo) {
         this.nome_completo = nome_completo;
@@ -37,11 +30,7 @@ public class UsuarioModel {
 
     public String getEmail() {
         return email;
-    }
-
-    public Long getId() {
-        return id;
-    }
+    }   
 
     public String getNome_completo() {
         return nome_completo;

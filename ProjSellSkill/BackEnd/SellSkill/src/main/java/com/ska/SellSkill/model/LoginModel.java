@@ -1,34 +1,43 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.ska.SellSkill.model;
 
-/**
- *
- * @author SKA
- */
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "tb_usuario")
 public class LoginModel {
-  
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    private int id;
-    private String nome;
+    @Column(name = "email")
     private String email;
+
+    @Column(name = "senha")
     private String senha;
 
-  
-    public int getId() { return id; }
-    public void setId(int id) { this.id = id; }
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-    public String getNome() { return nome; }
-    public void setNome(String nome) { this.nome = nome; }
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-    public String getEmail() { return email; }
-    public void setEmail(String email) { this.email = email; }
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
 
-    public String getSenha() { return senha; }
-    public void setSenha(String senha) { this.senha = senha; }
+    public String getEmail() {
+        return email;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
 }
-
-
