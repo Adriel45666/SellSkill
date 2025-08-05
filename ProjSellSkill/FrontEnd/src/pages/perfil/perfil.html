@@ -11,10 +11,9 @@
   <header class="topo">
     <div class="logo">SELLSKILLS</div>
     <nav>
-      <a href="#">Início</a>
-      <a href="#">Cursos</a>
-      <a href="#">Ajuda</a>
-      <a href="#">Sair</a>
+      <a href="C:/Users/SKA/Desktop/sellskils/SellSkill/ProjSellSkill/FrontEnd/src/index.html">Início</a>
+      <a href="C:/Users/SKA/Desktop/sellskils/SellSkill/ProjSellSkill/FrontEnd/src/pages/carrinho/carrinho.html">Carrinho</a>
+      <a href="#" onclick="logout()">Sair</a>
     </nav>
   </header>
 
@@ -22,9 +21,9 @@
     <section class="perfil-box">
       <img class="avatar" src="https://via.placeholder.com/100" alt="Avatar do usuário" />
       <div class="perfil-info">
-        <h1>Rafael Prado</h1>
+        <h1 id="nome-usuario">Carregando...</h1>
         <p><i class="fas fa-star"></i> 4.9 de 5 - 123 avaliações</p>
-        <p>Membro desde: jan/2022</p>
+        <p>Membro desde: jul/2025</p>
         <button class="botao-editar"><i class="fas fa-user-edit"></i> Editar Perfil</button>
       </div>
     </section>
@@ -32,7 +31,7 @@
     <section class="acoes">
       <h2>Minhas Ações</h2>
       <div class="botoes">
-        <a href="#" class="botao-acao"><i class="fas fa-shopping-cart"></i> Meus Pedidos</a>
+        <a href="C:/Users/SKA/Desktop/sellskils/SellSkill/ProjSellSkill/FrontEnd/src//pages/carrinho/carrinho.html" class="botao-acao"><i class="fas fa-shopping-cart"></i> cursos comprados</a>
         <a href="#" class="botao-acao"><i class="fas fa-heart"></i> Favoritos</a>
         <a href="#" class="botao-acao"><i class="fas fa-cog"></i> Configurações</a>
       </div>
@@ -40,19 +39,14 @@
 
     <section class="historico">
       <h2>Últimas Compras</h2>
-      <ul>
-        <li>
-          <strong>Curso: Desenvolvimento Web</strong> – comprado em 25/06/2025
-        </li>
-        <li>
-          <strong>Curso: Inteligência Artificial</strong> – comprado em 10/05/2025
-        </li>
-      </ul>
+      <ul id="lista-compras"></ul>
     </section>
   </main>
 
   <footer class="rodape">
     <p>&copy; 2025 SELL SKILLS - Todos os direitos reservados.</p>
   </footer>
+
+  <script src="perfil.js"></script>
 </body>
 </html>
