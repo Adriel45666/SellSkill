@@ -1,0 +1,75 @@
+/* Estilo global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #000; /* Fundo preto */
+  color: #fff; /* Texto branco para contrastar com o fundo preto */
+}
+
+/* Container principal */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px;
+  text-align: center;
+}
+
+/* Logo */
+.logo {
+  font-size: 3rem;
+  color: #4ec868; /* Verde claro */
+  margin-bottom: 30px;
+}
+
+/* Seção de boas-vindas */
+.welcome-section {
+  background-color: #616161; /* Cor escura para o fundo da seção */
+  padding: 50px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.welcome-section h2 {
+  font-size: 2.5rem;
+  color: #4ec868; /* Verde claro */
+  margin-bottom: 20px;
+}
+
+.welcome-section p {
+  font-size: 1.2rem;
+  color: #ecf0f1; /* Texto claro para contrastar */
+  margin-bottom: 20px;
+}
+
+/* Botões */
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.cta-button {
+  padding: 15px 30px;
+  background-color: #4ec868; /* Verde mais escuro */
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  transition: background-color 0.3s;
+  border: none;
+  cursor: pointer;
+}
+
+.cta-button:hover {
+  background-color: #4ec868; /* Verde claro ao passar o mouse */
+}
+
+.cta-button:focus {
+  outline: none; /* Remove outline ao focar no botão */
+}

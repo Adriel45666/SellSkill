@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -49,3 +50,66 @@
   <script src="pagamento.js"></script>
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamento - Compra de Curso</title>
+    <link rel="stylesheet" href="pagamento.css">
+</head>
+<body>
+    <header>
+        <h1>Continuação da Compra</h1>
+    </header>
+
+    <main>
+        <h2>Detalhes do Pagamento</h2>
+        <form action="/processar-pagamento" method="POST">
+            <!-- Informações do comprador -->
+            <label for="nome">Nome Completo</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="endereco">Endereço de Cobrança</label>
+            <input type="text" id="endereco" name="endereco" required>
+
+            <label for="telefone">Telefone</label>
+            <input type="tel" id="telefone" name="telefone" required>
+
+            <!-- Informações do pagamento -->
+            <h3>Informações de Pagamento</h3>
+
+            <label for="cartao-numero">Número do Cartão de Crédito</label>
+          
+
+            <label for="cartao-expiracao">Data de Expiração (MM/AA)</label>
+            <input type="text" id="cartao-expiracao" name="cartao-expiracao" placeholder="MM/AA" required>
+
+            <label for="cartao-cvc">Código de Segurança (CVC)</label>
+              <div class="manivela-container">
+                <div class="num-container">
+                    <p id="numero-cartao">000</p>
+                </div>
+                <div class="manivela" id="manivela-rodar">
+                    <div class="manivela-btn"></div>
+                </div>
+            </div>
+            <input type="number" id="cartao-cvc" name="cartao-cvc" required>
+
+            <!-- Botão de envio -->
+            <input type="submit" value="Confirmar Pagamento">
+        </form>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 SELLSKILLS. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="pagamento.js"></script>
+</body>
+</html>
+>>>>>>> f5c0a7d6407b9d9a348bade17ef9da47d64be371

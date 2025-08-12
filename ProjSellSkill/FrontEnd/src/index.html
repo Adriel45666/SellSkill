@@ -18,27 +18,16 @@
       <button id="btn-pesquisar" aria-label="Pesquisar"><i class="fa fa-search"></i></button>
     </div>
 
-    <div class="acoes">
-      <a href="C:/Users/SKA/Desktop/sellskils/SellSkill/ProjSellSkill/FrontEnd/src/pages/carrinho/carrinho.html" id="btn-carrinho" class="icone" title="Carrinho">
-        <i class="fa fa-shopping-cart"></i>
-      </a>
-
-      <a href="pages/login/login.html" class="botao-login">Login</a>
-
-      <!-- Botão com três riscos (menu) -->
-      <button id="btn-menu" class="menu-icon" aria-label="Abrir menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
-
-    <!-- Menu de opções que aparece ao clicar nos três riscos -->
-    <div id="menuOpcoes" class="menu-opcoes" role="menu" aria-hidden="true">
-      <a href="pages/perfil/perfil.html" role="menuitem">Meu Perfil</a>
-      <a href="pages/meus-cursos/meus-cursos.html" role="menuitem">Meus Cursos</a>
-      <a href="pages/suporte/suporte.html" role="menuitem">Suporte</a>
-      <a href="pages/configuracoes/configuracoes.html" role="menuitem">Configurações</a>
+      <!-- Menu hamburguer -->
+      <div class="menu-hamburguer">
+        <i class="fas fa-bars" onclick="toggleMenu()"></i>
+        <div class="menu-opcoes" id="menuOpcoes">
+          <a href="pages/carrinho/carrinho.html">Carrinho</a>
+          <a href="C:/Users/SKA/Desktop/sellskils/SellSkill/ProjSellSkill/FrontEnd/src/pages/perfil/perfil.html">perfil</a>
+          <a href="#">Sobre Nós</a>
+          <a href="#">Sair</a>
+        </div>
+      </div>
     </div>
   </header>
 
