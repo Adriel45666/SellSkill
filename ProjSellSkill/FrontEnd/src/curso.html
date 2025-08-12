@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>SELLSKILLS - Curso</title>
   <link rel="stylesheet" href="cursos.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
   <header class="topo">
     <div class="logo">SELLSKILLS</div>
+    <button id="btn-fav" class="btn-coracao" title="Favoritar">
+      <i id="icone-fav" class="fa-regular fa-heart"></i>
+    </button>
   </header>
 
   <main class="container curso-detalhes">
@@ -21,7 +25,7 @@
       <p id="preco-curso" class="preco"></p>
       <div class="botoes">
         <button id="btn-adicionar" class="btn">Adicionar ao Carrinho</button>
-        <button id="btn-comprar" class="btn comprar" href="C:/Users/SKA/Desktop/sellskils/SellSkill/ProjSellSkill/FrontEnd/src/pages/carrinho/carrinho.html">Comprar agora</button>
+        <button id="btn-comprar" class="btn comprar">Comprar agora</button>
       </div>
     </div>
   </main>
@@ -30,6 +34,6 @@
     <p>&copy; 2025 SELLSKILLS - Todos os direitos reservados.</p>
   </footer>
 
-  <script src="curso.js"></script>
+  <script src="curso.js" defer></script>
 </body>
 </html>

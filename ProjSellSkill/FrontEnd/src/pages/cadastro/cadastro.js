@@ -29,5 +29,5 @@ document.getElementById('cadastroForm').addEventListener('submit', function(e) {
   localStorage.setItem('usuarioLogado', JSON.stringify({ nome, email }));
 
   alert("Cadastro realizado com sucesso!");
-  window.location.href = "index.html";
+  window.location.href = "C:/Users/SKA/Desktop/sellskils/SellSkill/ProjSellSkill/FrontEnd/src/index.html";
 });

@@ -1,0 +1,91 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #0d0d0d;
+  color: #f5f5f5;
+}
+
+.topo {
+  background-color: #00ff88;
+  color: #0d0d0d;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.topo a {
+  text-decoration: none;
+  color: #0d0d0d;
+  font-weight: bold;
+  margin-left: 20px;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 20px;
+}
+
+.resumo-pedido, .pagamento {
+  background-color: #1a1a1a;
+  border-radius: 10px;
+  padding: 20px;
+  flex: 1;
+  min-width: 300px;
+  box-shadow: 0 0 15px rgba(0, 255, 136, 0.3);
+}
+
+h2 {
+  border-bottom: 2px solid #00ff88;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+}
+
+#lista-produtos {
+  margin-bottom: 10px;
+}
+
+.produto {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #333;
+  padding: 8px 0;
+}
+
+.total {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #00ff88;
+}
+
+form label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+form input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #00ff88;
+  border-radius: 5px;
+  background-color: #0d0d0d;
+  color: #fff;
+}
+
+button {
+  background-color: #00ff88;
+  color: #0d0d0d;
+  border: none;
+  padding: 12px;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  width: 100%;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #00cc6a;
+}

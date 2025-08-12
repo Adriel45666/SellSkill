@@ -2,80 +2,53 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>SELLSKILLS - Cursos</title>
   <link rel="stylesheet" href="main.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 </head>
 <body>
   <header class="topo">
-    <div class="header-conteudo">
-      <!-- Logo -->
-      <div class="logo">
-        <img src="resource/SellSkill.png" alt="Logo SELLSKILLS" />
-      </div>
+    <div class="logo">
+      <h1>SELLSKILLS</h1>
+    </div>
 
-      <!-- Barra de pesquisa -->
-      <input id="pesquisa" type="text" placeholder="Buscar cursos..." class="barra-pesquisa" />
+    <div class="barra-pesquisa">
+      <input type="text" id="pesquisa" placeholder="Buscar cursos..." aria-label="Buscar cursos" />
+      <button id="btn-pesquisar" aria-label="Pesquisar"><i class="fa fa-search"></i></button>
+    </div>
 
-      <!-- Botão do carrinho -->
-      <div class="botao-carrinho-header" onclick="window.location.href='pages/carrinho/carrinho.html'">
-        <i class="fas fa-shopping-cart"></i>
-      </div>
+    <div class="acoes">
+      <a href="C:/Users/SKA/Desktop/sellskils/SellSkill/ProjSellSkill/FrontEnd/src/pages/carrinho/carrinho.html" id="btn-carrinho" class="icone" title="Carrinho">
+        <i class="fa fa-shopping-cart"></i>
+      </a>
 
-      <!-- Menu hamburguer -->
-      <div class="menu-hamburguer">
-        <i class="fas fa-bars" onclick="toggleMenu()"></i>
-        <div class="menu-opcoes" id="menuOpcoes">
-          <a href="pages/carrinho/carrinho.html">Carrinho</a>
-          <a href="C:/Users/SKA/Desktop/sellskils/SellSkill/ProjSellSkill/FrontEnd/src/pages/perfil/perfil.html">perfil</a>
-          <a href="#">Sobre Nós</a>
-          <a href="#">Sair</a>
-        </div>
-      </div>
+      <a href="pages/login/login.html" class="botao-login">Login</a>
+
+      <!-- Botão com três riscos (menu) -->
+      <button id="btn-menu" class="menu-icon" aria-label="Abrir menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <!-- Menu de opções que aparece ao clicar nos três riscos -->
+    <div id="menuOpcoes" class="menu-opcoes" role="menu" aria-hidden="true">
+      <a href="pages/perfil/perfil.html" role="menuitem">Meu Perfil</a>
+      <a href="pages/meus-cursos/meus-cursos.html" role="menuitem">Meus Cursos</a>
+      <a href="pages/suporte/suporte.html" role="menuitem">Suporte</a>
+      <a href="pages/configuracoes/configuracoes.html" role="menuitem">Configurações</a>
     </div>
   </header>
 
-  <main class="container">
-    <section class="lista-cursos">
-      <div class="curso-card" data-id="1" onclick="abrirCurso(1)">
-        <h3>Segurança da Informação</h3>
-        <p>Proteja dados, redes e sistemas contra ameaças cibernéticas</p>
-      </div>
-      <div class="curso-card" data-id="2" onclick="abrirCurso(2)">
-        <h3>Desenvolvimento Web Full Stack</h3>
-        <p>HTML, CSS, JavaScript, Node.js e mais</p>
-      </div>
-      <div class="curso-card" data-id="3" onclick="abrirCurso(3)">
-        <h3>Inteligência Artificial com Python</h3>
-        <p>Crie modelos de IA com aprendizado de máquina</p>
-      </div>
-      <!-- Adicione mais cursos conforme necessário -->
-    </section>
+  <main class="conteudo">
+    <h2>Cursos Disponíveis</h2>
+    <div id="lista-cursos" class="cursos" aria-live="polite">
+      <!-- Os cards serão inseridos aqui pelo JS -->
+    </div>
   </main>
 
-  <footer class="rodape">
-    <p>&copy; 2025 SELLSKILLS - Todos os direitos reservados.</p>
-  </footer>
-
-  <script>
-    function toggleMenu() {
-      const menu = document.getElementById("menuOpcoes");
-      menu.style.display = menu.style.display === "block" ? "none" : "block";
-    }
-
-    // Fecha o menu se clicar fora
-    document.addEventListener("click", function (event) {
-      const menu = document.getElementById("menuOpcoes");
-      const icon = document.querySelector(".menu-hamburguer i");
-      if (menu && !menu.contains(event.target) && !icon.contains(event.target)) {
-        menu.style.display = "none";
-      }
-    });
-
-    function abrirCurso(id) {
-      window.location.href = `pages/curso/curso.html?id=${id}`;
-    }
-  </script>
+  <script src="index.js"></script>
 </body>
 </html>

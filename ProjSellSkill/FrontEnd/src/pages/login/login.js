@@ -14,5 +14,5 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
 
   localStorage.setItem('usuarioLogado', JSON.stringify({ nome: usuario.nome, email: usuario.email }));
   alert("Login realizado!");
-  window.location.href = "C:/Users/SKA/Desktop/sellskils/SellSkill/ProjSellSkill/FrontEnd/src//index.html";
+  window.location.href = "C:/Users/SKA/Desktop/sellskils/SellSkill/ProjSellSkill/FrontEnd/src/index.html";
 });
