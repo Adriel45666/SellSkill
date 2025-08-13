@@ -1,4 +1,4 @@
-/* main.css - com ícone de três riscos ao lado do Login e dropdown */
+/* main.css - com ícone de três riscos animado, dropdown e cards maiores */
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -12,7 +12,7 @@ body {
 
 /* Topo */
 .topo {
-  position: relative; /* para posicionar o menuOpcoes */
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -105,21 +105,39 @@ body {
   display: block;
   width: 22px;
   height: 2.6px;
-  background: #00ff33; /* riscos em verde neon */
+  background: #00ff33;
   border-radius: 2px;
+}
+
+/* animação: transforma os 3 riscos em X quando .open está ativo no botão */
+.menu-icon.open {
+  transform: none;
+}
+.menu-icon span {
+  transition: transform 0.18s ease, opacity 0.18s ease;
+  transform-origin: center;
+}
+.menu-icon.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.menu-icon.open span:nth-child(2) {
+  opacity: 0;
+}
+.menu-icon.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
 }
 
 /* menuOpcoes (dropdown) */
 .menu-opcoes {
   position: absolute;
   top: calc(100% + 8px);
-  right: 16px; /* alinha ao canto direito do header */
+  right: 16px;
   background: #0d0d0d;
   border: 1px solid rgba(0,255,51,0.12);
   border-radius: 10px;
   padding: 8px;
-  display: none; /* mostrado via JS */
-  min-width: 180px;
+  display: none;
+  min-width: 200px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.6), 0 0 10px rgba(0,255,51,0.03);
   z-index: 999;
 }
