@@ -1,61 +1,52 @@
+
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pagamento - Compra de Curso</title>
-    <link rel="stylesheet" href="pagamento.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pagamento - SELLSKILLS</title>
+  <link rel="stylesheet" href="pagamento.css">
 </head>
 <body>
-    <header>
-        <h1>Continuação da Compra</h1>
-    </header>
+  <header class="topo">
+    <h1 class="logo">SELLSKILLS</h1>
+    <nav>
+      <a href="C:/Users/SKA/Desktop/sellskils/SellSkill/ProjSellSkill/FrontEnd/src/index.html">Início</a>
+      <a href="C:/Users/SKA/Desktop/sellskils/SellSkill/ProjSellSkill/FrontEnd/src/pages/carrinho/carrinho.html">Carrinho</a>
+    </nav>
+  </header>
 
-    <main>
-        <h2>Detalhes do Pagamento</h2>
-        <form action="/processar-pagamento" method="POST">
-            <!-- Informações do comprador -->
-            <label for="nome">Nome Completo</label>
-            <input type="text" id="nome" name="nome" required>
+  <main class="container">
+    <section class="resumo-pedido">
+      <h2>Resumo do Pedido</h2>
+      <div id="lista-produtos"></div>
+      <p class="total">Total: <span id="valor-total">R$ 0,00</span></p>
+    </section>
 
-            <label for="email">E-mail</label>
-            <input type="email" id="email" name="email" required>
+    <section class="pagamento">
+      <h2>Formas de Pagamento</h2>
+      <form id="form-pagamento">
+        <label>
+          Número do Cartão
+          <input type="text" id="cartao" maxlength="16" required>
+        </label>
+        <label>
+          Nome no Cartão
+          <input type="text" id="nome-cartao" required>
+        </label>
+        <label>
+          Validade (MM/AA)
+          <input type="text" id="validade" placeholder="MM/AA" required>
+        </label>
+        <label>
+          CVV
+          <input type="text" id="cvv" maxlength="3" required>
+        </label>
+        <button type="submit">Finalizar Compra</button>
+      </form>
+    </section>
+  </main>
 
-            <label for="endereco">Endereço de Cobrança</label>
-            <input type="text" id="endereco" name="endereco" required>
-
-            <label for="telefone">Telefone</label>
-            <input type="tel" id="telefone" name="telefone" required>
-
-            <!-- Informações do pagamento -->
-            <h3>Informações de Pagamento</h3>
-
-            <label for="cartao-numero">Número do Cartão de Crédito</label>
-          
-
-            <label for="cartao-expiracao">Data de Expiração (MM/AA)</label>
-            <input type="text" id="cartao-expiracao" name="cartao-expiracao" placeholder="MM/AA" required>
-
-            <label for="cartao-cvc">Código de Segurança (CVC)</label>
-              <div class="manivela-container">
-                <div class="num-container">
-                    <p id="numero-cartao">000</p>
-                </div>
-                <div class="manivela" id="manivela-rodar">
-                    <div class="manivela-btn"></div>
-                </div>
-            </div>
-            <input type="number" id="cartao-cvc" name="cartao-cvc" required>
-
-            <!-- Botão de envio -->
-            <input type="submit" value="Confirmar Pagamento">
-        </form>
-    </main>
-
-    <footer class="footer">
-        <p>&copy; 2025 SELLSKILLS. Todos os direitos reservados.</p>
-    </footer>
-
-    <script src="pagamento.js"></script>
+  <script src="pagamento.js"></script>
 </body>
 </html>
