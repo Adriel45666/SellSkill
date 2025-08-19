@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tela de Login</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+  <div class="login-container">
+    <div class="logo-header">
+      <img src="SellSKill.png" alt="Logo SellSkill">
+    </div>
+    <span>LOGIN</span>
+
+    <form id="loginForm">
+      <input type="text" id="email" placeholder="E-mail" required>
+
+      <div class="senha-container">
+        <input type="password" id="senha" placeholder="Senha" required>
+        <button type="button" class="toggle-btn" data-target="senha" aria-label="Mostrar senha">
+          <svg class="icon-eye-open" xmlns="http://www.w3.org/2000/svg" height="20" width="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zm0 13c-3.03 0-5.5-2.47-5.5-5.5s2.47-5.5 5.5-5.5 5.5 2.47 5.5 5.5-2.47 5.5-5.5 5.5zm0-9c-1.93 0-3.5 1.57-3.5 3.5s1.57 3.5 3.5 3.5 3.5-1.57 3.5-3.5-1.57-3.5-3.5-3.5z"/>
+          </svg>
+          <svg class="icon-eye-closed" xmlns="http://www.w3.org/2000/svg" height="20" width="20" viewBox="0 0 24 24" fill="currentColor" style="display: none;">
+            <path d="M12 7c-2.43 0-4.47 1.25-5.48 3.12l1.46 1.46C8.5 9.77 10.11 9 12 9c2.72 0 5.18 1.43 6.47 3.53l1.46-1.46C20.18 8.1 16.5 7 12 7zm0 10c2.43 0 4.47-1.25 5.48-3.12l-1.46-1.46C15.5 14.23 13.89 15 12 15c-2.72 0-5.18-1.43-6.47-3.53l-1.46 1.46C3.82 15.9 7.5 17 12 17zm0-6.5c-1.93 0-3.5 1.57-3.5 3.5s1.57 3.5 3.5 3.5 3.5-1.57 3.5-3.5-1.57-3.5-3.5-3.5zM2 4.27l2.19 2.19C2.71 7.82 1 9.79 1 12c1.73 4.39 6 7.5 11 7.5 1.79 0 3.49-.39 5.06-1.12L19.73 21 21 19.73 4.27 3 2 4.27z"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="forgot-password">
+        <a href="#">Esqueceu a senha?</a>
+      </div>
+
+      <input type="submit" value="Entrar">
+    </form>
+
+    <p>Não tem conta? 
+      <a href="C:/Users/SKA/Desktop/FrontEnd/src/pages/cadastro/cadastro.html">Cadastre-se</a>
+    </p>
+  </div>
+
+  <script src="login.js"></script>
+</body>
+</html>
