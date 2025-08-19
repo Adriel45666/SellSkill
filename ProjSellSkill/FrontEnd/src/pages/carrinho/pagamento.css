@@ -1,139 +1,130 @@
-/* RESET E BASE */
-body {
-  font-family: Arial, sans-serif;
+/* Cores principais */
+:root {
+  --verde-neon: #00FF66;
+  --preto-fundo: #111;
+  --cinza-escuro: #1a1a1a;
+  --texto-branco: #fff;
+}
+
+/* Reset básico */
+* {
   margin: 0;
   padding: 0;
-  background-color: #000;
-  color: #eee;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
 }
 
-/* HEADER */
-header {
-  background-color: #000;
-  border-bottom: 1px solid #4ec868;
-  padding: 15px 20px;
-  text-align: center;
+body {
+  background-color: var(--preto-fundo);
+  color: var(--texto-branco);
 }
 
-header h1 {
-  color: #4ec868;
-  margin: 0;
-  font-size: 24px;
+header.topo {
+  background-color: var(--verde-neon);
+  color: black;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-/* MAIN */
-main {
-  padding: 30px 20px;
-  max-width: 900px;
-  margin: 0 auto;
-  background-color: #111;
+header.topo .logo {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+header.topo nav a {
+  margin-left: 1.5rem;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+.resumo-pedido, .pagamento {
+  background-color: var(--cinza-escuro);
+  padding: 2rem;
   border-radius: 10px;
+  flex: 1;
 }
 
-h2 {
-  color: #4ec868;
-  margin-bottom: 20px;
+.resumo-pedido h2, .pagamento h2 {
+  border-bottom: 2px solid var(--verde-neon);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  color: var(--verde-neon);
 }
 
-form {
+#lista-produtos .item-produto {
+  background-color: var(--preto-fundo);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
   display: flex;
-  flex-direction: column;
-  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid var(--verde-neon);
 }
 
-label {
-  color: #ccc;
-  font-size: 16px;
-  font-weight: 600;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="tel"],
-input[type="number"] {
-  padding: 12px;
-  background-color: #222;
-  border: 1px solid #444;
-  border-radius: 6px;
-  color: #eee;
-  font-size: 16px;
-}
-
-input[type="submit"] {
-  padding: 12px;
-  background-color: #4ec868;
-  color: #000;
+#lista-produtos .item-produto button {
+  background-color: var(--verde-neon);
   border: none;
+  color: black;
+  padding: 0.5rem 1rem;
   border-radius: 6px;
-  font-size: 16px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: 0.2s;
 }
 
-input[type="submit"]:hover {
-  background-color: #3bb85d;
+#lista-produtos .item-produto button:hover {
+  background-color: #00cc52;
 }
 
-h3 {
-  color: #ccc;
-  font-size: 18px;
+.total {
+  margin-top: 1rem;
+  font-weight: bold;
+  color: var(--verde-neon);
 }
 
-/* Manivela */
-.manivela-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  position: relative;
+form#form-pagamento label {
+  display: block;
+  margin-bottom: 1rem;
+  color: var(--texto-branco);
 }
 
-.num-container p {
-  font-size: 36px;
-  letter-spacing: 2px;
-  color: #fff;
+form#form-pagamento input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.3rem;
+  border-radius: 6px;
+  border: 1px solid var(--verde-neon);
+  background-color: var(--preto-fundo);
+  color: var(--texto-branco);
 }
 
-.manivela {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 80px;
-  height: 80px;
-  background-color: #444;
-  border-radius: 50%;
-  position: relative;
+form#form-pagamento input::placeholder {
+  color: #888;
+}
+
+form#form-pagamento button {
+  background-color: var(--verde-neon);
+  border: none;
+  padding: 0.8rem;
+  width: 100%;
+  border-radius: 6px;
   cursor: pointer;
-  transition: transform 0.1s ease-out;
+  font-weight: bold;
+  color: black;
+  transition: 0.2s;
+  margin-top: 1rem;
 }
 
-.manivela-btn {
-  width: 30px;
-  height: 5px;
-  background-color: #fff;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(90deg);
-}
-
-.manivela:hover {
-  background-color: #555;
-}
-
-.manivela:active {
-  background-color: #666;
-}
-
-/* FOOTER */
-footer.rodape {
-  background-color: #000;
-  color: #ccc;
-  text-align: center;
-  padding: 15px;
-  margin-top: 30px;
-}
-
-footer p {
-  margin: 0;
+form#form-pagamento button:hover {
+  background-color: #00cc52;
 }
