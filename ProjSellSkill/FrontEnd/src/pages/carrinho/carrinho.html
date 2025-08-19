@@ -1,32 +1,59 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="carrinho.css" />
-  <title>Carrinho - SELLSKILLS</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Seu Carrinho - SELLSKILLS</title>
+  <link rel="stylesheet" href="../../main.css" />
+  <style>
+    .wrap { max-width: 1100px; margin: 24px auto; padding: 0 16px; }
+    .grid { display: grid; grid-template-columns: 1fr 320px; gap: 24px; }
+    .card { background: rgba(255,255,255,0.03); border: 1px solid rgba(0,255,51,0.12); border-radius: 12px; padding: 16px; }
+    .item { display: grid; grid-template-columns: 96px 1fr auto; gap: 12px; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.07); padding: 12px 0; }
+    .item:last-child { border-bottom: 0; }
+    .item img { width: 96px; height: 64px; object-fit: cover; border-radius: 8px; }
+    .item h3 { margin: 0; color: #00ff33; font-size: 1rem; }
+    .item .preco { font-weight: 800; }
+    .item button { background: transparent; border: 1px solid rgba(255,255,255,0.15); padding: 8px 10px; border-radius: 8px; cursor: pointer; }
+    .resumo-carrinho { display: flex; flex-direction: column; gap: 10px; }
+    .resumo-linha { display: flex; justify-content: space-between; }
+    .acoes { display: flex; gap: 10px; margin-top: 10px; }
+    .btn { background: #00ff33; color: #000; border: none; padding: 10px 14px; border-radius: 10px; font-weight: 800; cursor: pointer; }
+    .btn-sec { background: transparent; border: 1px solid rgba(255,255,255,0.2); color: #e6e6e6; }
+    @media (max-width: 900px){ .grid { grid-template-columns: 1fr; } }
+  </style>
 </head>
 <body>
-  <div class="topo">
-    <div class="logo">SELLSKILLS</div>
-    <input class="barra-pesquisa" type="text" placeholder="Buscar produto...">
-  </div>
-
-  <div class="container">
-    <div class="produtos">
-      <h1 class="titulo-carrinho">Meu Carrinho</h1>
-      <div id="itens-carrinho"></div>
+  <header class="topo">
+    <div class="logo"><h1>SELLSKILLS</h1></div>
+    <div class="barra-pesquisa" style="max-width:480px">
+      <input type="text" placeholder="Buscar cursos..." disabled />
+      <button disabled><i class="fa fa-search"></i></button>
     </div>
-
-    <div class="resumo-carrinho">
-      <h3>Resumo da compra</h3>
-      <p>Produtos (<span id="quantidade-total">0</span>)</p>
-      <p class="total">Total: <strong>R$ 0,00</strong></p>
-      <button class="finalizar-compra">Continuar a compra</button>
+    <div class="acoes">
+      <a href="../../index.html" class="botao-login">Voltar</a>
     </div>
-  </div>
+  </header>
 
-  <script src="carrinho.js"></script>
+  <main class="wrap">
+    <h2 style="margin:12px 0 18px">Seu Carrinho</h2>
 
+    <div class="grid">
+      <section class="card">
+        <div id="itens-carrinho"></div>
+      </section>
+
+      <aside class="card resumo-carrinho">
+        <div class="resumo-linha"><span>Itens</span> <strong id="quantidade-total">0</strong></div>
+        <div class="resumo-linha"><span>Total</span> <strong id="total-geral">R$ 0,00</strong></div>
+        <div class="acoes">
+          <button id="btn-finalizar" class="btn">Finalizar compra</button>
+          <button id="btn-esvaziar" class="btn btn-sec">Esvaziar</button>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <script src="carrinho.js" defer></script>
 </body>
 </html>
