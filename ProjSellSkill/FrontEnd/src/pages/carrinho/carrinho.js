@@ -1,54 +1,103 @@
-   document.addEventListener("DOMContentLoaded", () => {
-      const container = document.getElementById("itens-carrinho");
-      const qtdTotal = document.getElementById("quantidade-total");
-      let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
-
-      if (carrinho.length === 0) {
-        container.innerHTML = "<h2 style='text-align:center'>Seu carrinho está vazio.</h2>";
-        document.querySelector(".resumo-carrinho strong").textContent = "R$ 0,00";
-        qtdTotal.textContent = "0";
-        return;
+document.addEventListener('DOMContentLoaded', () => {
+  function getUsuario() {
+    const raw = localStorage.getItem('usuarioLogado');
+    if (!raw) return null;
+    try {
+      const obj = JSON.parse(raw);
+      if (obj && obj.email) return obj;
+      if (typeof obj === 'string' && obj.includes('@')) {
+        return { email: obj, nome_completo: obj.split('@')[0] };
       }
+      return null;
+    } catch {
+      if (raw.includes('@')) return { email: raw, nome_completo: raw.split('@')[0] };
+      return null;
+    }
+  }
 
-      let total = 0;
+  function carrinhoKey() {
+    const u = getUsuario();
+    return u && u.email ? `carrinho_${u.email}` : null;
+  }
 
-      carrinho.forEach((curso, index) => {
-        const precoNumero = parseFloat(
-          curso.preco.replace("R$", "").replace(/\./g, "").replace(",", ".").trim()
-        );
-        total += precoNumero;
+  const key = carrinhoKey();
+  const container = document.getElementById('itens-carrinho');
+  const qtdTotal = document.getElementById('quantidade-total');
+  const totalElement = document.getElementById('total-geral');
 
-        const item = document.createElement("div");
-        item.className = "item-carrinho";
-        item.innerHTML = `
-          <img src="${curso.imagem}" alt="${curso.titulo}" />
-          <div>
-            <h2>${curso.titulo}</h2>
-            <p>${curso.descricao}</p>
-            <p class="preco">${curso.preco}</p>
-            <button class="remover" data-index="${index}">Remover</button>
-          </div>
-        `;
-        container.appendChild(item);
-      });
+  const btnFinalizar = document.getElementById('btn-finalizar');
+  const btnEsvaziar = document.getElementById('btn-esvaziar');
 
-      document.querySelector(".resumo-carrinho strong").textContent = `R$ ${total.toFixed(2).replace(".", ",")}`;
-      qtdTotal.textContent = carrinho.length;
+  if (!key) {
+    container.innerHTML = "<h2>Você precisa estar logado para ver o carrinho.</h2>";
+    qtdTotal.textContent = "0";
+    totalElement.textContent = "R$ 0,00";
+    return;
+  }
 
-      // Remoção de item
-      container.querySelectorAll(".remover").forEach(btn => {
-        btn.addEventListener("click", (e) => {
-          const idx = parseInt(e.target.getAttribute("data-index"));
-          carrinho.splice(idx, 1);
-          localStorage.setItem("carrinho", JSON.stringify(carrinho));
-          location.reload();
-        });
-      });
+  let carrinho = JSON.parse(localStorage.getItem(key)) || [];
 
-      // Função de redirecionamento para a página de pagamento
-      const finalizarCompraBtn = document.querySelector(".finalizar-compra");
-      finalizarCompraBtn.addEventListener("click", function () {
-        // Redireciona para a página de pagamento
-        window.location.href = 'pagamento.html';  // Caminho relativo
-      });
+  function salvar() {
+    localStorage.setItem(key, JSON.stringify(carrinho));
+  }
+
+  function render() {
+    if (!carrinho.length) {
+      container.innerHTML = "<h2>Seu carrinho está vazio.</h2>";
+      qtdTotal.textContent = "0";
+      totalElement.textContent = "R$ 0,00";
+      return;
+    }
+
+    container.innerHTML = "";
+    let total = 0;
+    carrinho.forEach((curso, index) => {
+      const preco = parseFloat(curso.preco.replace("R$", "").replace(",", "."));
+      total += preco;
+
+      const item = document.createElement("div");
+      item.innerHTML = `
+        <h2>${curso.titulo}</h2>
+        <p>${curso.preco}</p>
+        <button data-index="${index}">Remover</button>
+      `;
+      container.appendChild(item);
     });
+
+    qtdTotal.textContent = carrinho.length;
+    totalElement.textContent = `R$ ${total.toFixed(2).replace(".", ",")}`;
+  }
+
+  container.addEventListener("click", e => {
+    if (e.target.tagName === "BUTTON") {
+      carrinho.splice(e.target.dataset.index, 1);
+      salvar();
+      render();
+    }
+  });
+
+  // 🚀 botão "Esvaziar"
+  btnEsvaziar.addEventListener("click", () => {
+    if (!carrinho.length) return;
+    if (confirm("Deseja esvaziar o carrinho?")) {
+      carrinho = [];
+      salvar();
+      render();
+    }
+  });
+
+  // 🚀 botão "Finalizar compra"
+  btnFinalizar.addEventListener("click", () => {
+    if (!carrinho.length) {
+      alert("Seu carrinho está vazio.");
+      return;
+    }
+
+    salvar(); // salva estado final do carrinho
+
+    // 👉 aqui você define a página de pagamento
+    window.location.href = "../carrinho/pagamento.html";
+  });
+
+  render();
+});
