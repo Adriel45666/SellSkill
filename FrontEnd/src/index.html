@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SELLSKILLS - Cursos</title>
+  <link rel="stylesheet" href="main.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <header class="topo">
+    <div class="header-conteudo">
+      <!-- Logo -->
+      <div class="logo">
+        <img src="resource/SellSkill.png" alt="Logo SELLSKILLS" />
+      </div>
+
+      <!-- Barra de pesquisa -->
+      <input id="pesquisa" type="text" placeholder="Buscar cursos..." class="barra-pesquisa" />
+
+      <!-- Botão do carrinho -->
+      <div class="botao-carrinho-header" onclick="window.location.href='pages/carrinho/carrinho.html'">
+        <i class="fas fa-shopping-cart"></i>
+      </div>
+
+      <!-- Menu hamburguer -->
+      <div class="menu-hamburguer">
+        <i class="fas fa-bars" onclick="toggleMenu()"></i>
+        <div class="menu-opcoes" id="menuOpcoes">
+          <a href="pages/carrinho/carrinho.html">Carrinho</a>
+          <a href="pages/perfil/perfil.html">perfil</a>
+          <a href="#">Sobre Nós</a>
+          <a href="#">Sair</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+  <footer class="rodape">
+    <p>&copy; 2025 SELLSKILLS - Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("menuOpcoes");
+      menu.style.display = menu.style.display === "block" ? "none" : "block";
+    }
+
+    // Fecha o menu se clicar fora
+    document.addEventListener("click", function (event) {
+      const menu = document.getElementById("menuOpcoes");
+      const icon = document.querySelector(".menu-hamburguer i");
+      if (menu && !menu.contains(event.target) && !icon.contains(event.target)) {
+        menu.style.display = "none";
+      }
+    });
+
+    function abrirCurso(id) {
+      window.location.href = `curso.html?id=${id}`;
+    }
+  </script>
+</body>
+</html>
